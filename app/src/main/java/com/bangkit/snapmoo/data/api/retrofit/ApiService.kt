@@ -6,6 +6,8 @@ import com.bangkit.snapmoo.data.api.response.LoginResponse
 import com.bangkit.snapmoo.data.api.response.NewsResponse
 import com.bangkit.snapmoo.data.api.response.PredictionResponse
 import com.bangkit.snapmoo.data.api.response.ReportResponse
+import com.bangkit.snapmoo.data.api.response.SaveHistoryResponse
+import com.bangkit.snapmoo.data.api.response.SaveReportResponse
 import com.bangkit.snapmoo.data.api.response.UserResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -87,7 +89,7 @@ interface MainApiService {
         @Header("Authorization") token: String,
         @Path("id") id: String,
         @Field("is_saved") isSaved: Boolean
-    ): HistoryResponse
+    ): SaveHistoryResponse
 
     @GET("report")
     suspend fun getAllReport(
@@ -117,6 +119,6 @@ interface MainApiService {
         @Part("prediction") prediction: RequestBody,
         @Part("score") score: RequestBody,
         @Part file: MultipartBody.Part,
-    ): ReportResponse
+    ): SaveReportResponse
 
 }

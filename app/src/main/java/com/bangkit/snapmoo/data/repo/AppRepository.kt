@@ -10,6 +10,8 @@ import com.bangkit.snapmoo.data.api.response.LoginResponse
 import com.bangkit.snapmoo.data.api.response.NewsResponse
 import com.bangkit.snapmoo.data.api.response.PredictionResponse
 import com.bangkit.snapmoo.data.api.response.ReportResponse
+import com.bangkit.snapmoo.data.api.response.SaveHistoryResponse
+import com.bangkit.snapmoo.data.api.response.SaveReportResponse
 import com.bangkit.snapmoo.data.api.response.UserResponse
 import com.bangkit.snapmoo.data.api.retrofit.MainApiService
 import com.bangkit.snapmoo.data.pref.UserModel
@@ -87,7 +89,12 @@ class MainRepository(
         }
     }
 
-    fun editUserData(token: String, name: String, phoneNumber: String, image: File?): LiveData<Result<UserResponse>> = liveData {
+    fun editUserData(
+        token: String,
+        name: String,
+        phoneNumber: String,
+        image: File?
+    ): LiveData<Result<UserResponse>> = liveData {
         emit(Result.Loading)
 
 
@@ -105,7 +112,8 @@ class MainRepository(
         try {
             val nameBody = name.toRequestBody("text/plain".toMediaType())
             val phoneNumberBody = phoneNumber.toRequestBody("text/plain".toMediaType())
-            val result = mainApiService.editUserData("Bearer $token", nameBody, phoneNumberBody, imagePart)
+            val result =
+                mainApiService.editUserData("Bearer $token", nameBody, phoneNumberBody, imagePart)
             emit(Result.Success(result))
         } catch (e: HttpException) {
             val jsonInString = e.response()?.errorBody()?.string()
@@ -141,7 +149,12 @@ class MainRepository(
         }
     }
 
-    fun postHistory(token: String, indication: String, percentage: Int, image: File): LiveData<Result<PredictionResponse>> = liveData {
+    fun postHistory(
+        token: String,
+        indication: String,
+        percentage: Int,
+        image: File
+    ): LiveData<Result<PredictionResponse>> = liveData {
         emit(Result.Loading)
 
         val requestImageFile = image.asRequestBody("image/jpeg".toMediaType())
@@ -151,7 +164,12 @@ class MainRepository(
         try {
             val indicationBody = indication.toRequestBody("text/plain".toMediaType())
             val percentageBody = percentage.toString().toRequestBody("text/plain".toMediaType())
-            val result = mainApiService.postHistory("Bearer $token", indicationBody, percentageBody, imageBody)
+            val result = mainApiService.postHistory(
+                "Bearer $token",
+                indicationBody,
+                percentageBody,
+                imageBody
+            )
             emit(Result.Success(result))
         } catch (e: HttpException) {
             val jsonInString = e.response()?.errorBody()?.string()
@@ -187,7 +205,11 @@ class MainRepository(
         }
     }
 
-    fun bookmarkHistory(token: String, id: String, isSaved: Boolean): LiveData<Result<HistoryResponse>> = liveData {
+    fun bookmarkHistory(
+        token: String,
+        id: String,
+        isSaved: Boolean
+    ): LiveData<Result<SaveHistoryResponse>> = liveData {
         emit(Result.Loading)
         Log.d("bookmarkHistory", "isSaved: $isSaved")
         try {
@@ -195,7 +217,7 @@ class MainRepository(
             emit(Result.Success(result))
         } catch (e: HttpException) {
             val jsonInString = e.response()?.errorBody()?.string()
-            val errorBody = Gson().fromJson(jsonInString, HistoryResponse::class.java)
+            val errorBody = Gson().fromJson(jsonInString, SaveHistoryResponse::class.java)
             val errorMessage = errorBody.message
             emit(Result.Error(errorMessage))
         }
@@ -214,18 +236,19 @@ class MainRepository(
         }
     }
 
-    fun getDetailReport(token: String, id: String): LiveData<Result<DetailReportResponse>> = liveData {
-        emit(Result.Loading)
-        try {
-            val result = mainApiService.getDetailReport("Bearer $token", id)
-            emit(Result.Success(result))
-        } catch (e: HttpException) {
-            val jsonInString = e.response()?.errorBody()?.string()
-            val errorBody = Gson().fromJson(jsonInString, ReportResponse::class.java)
-            val errorMessage = errorBody.message
-            emit(Result.Error(errorMessage))
+    fun getDetailReport(token: String, id: String): LiveData<Result<DetailReportResponse>> =
+        liveData {
+            emit(Result.Loading)
+            try {
+                val result = mainApiService.getDetailReport("Bearer $token", id)
+                emit(Result.Success(result))
+            } catch (e: HttpException) {
+                val jsonInString = e.response()?.errorBody()?.string()
+                val errorBody = Gson().fromJson(jsonInString, ReportResponse::class.java)
+                val errorMessage = errorBody.message
+                emit(Result.Error(errorMessage))
+            }
         }
-    }
 
     fun uploadReportData(
         token: String,
@@ -242,7 +265,7 @@ class MainRepository(
         prediction: String,
         score: Int,
         image: File,
-    ): LiveData<Result<ReportResponse>> = liveData {
+    ): LiveData<Result<SaveReportResponse>> = liveData {
         emit(Result.Loading)
         try {
             val nameBody = name.toRequestBody("text/plain".toMediaType())
@@ -280,7 +303,7 @@ class MainRepository(
             emit(Result.Success(result))
         } catch (e: HttpException) {
             val jsonInString = e.response()?.errorBody()?.string()
-            val errorBody = Gson().fromJson(jsonInString, ReportResponse::class.java)
+            val errorBody = Gson().fromJson(jsonInString, SaveReportResponse::class.java)
             val errorMessage = errorBody.message
             emit(Result.Error(errorMessage))
         }
