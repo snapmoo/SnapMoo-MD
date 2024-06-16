@@ -29,5 +29,16 @@
     <string name="phonenumber_cannot_be_empty">Phone number cannot be empty</string>
     <string name="cropped_image_uri_is_null">Cropped image URI is null</string>
     <string name="failed_to_crop_the_image">Failed to crop the image.</string>
+    <string name="invalid_email_format">Invalid email format</string>
+    <string name="address_cannot_be_empty">Address cannot be empty</string>
+    <string name="city_cannot_be_empty">City cannot be empty</string>
+    <string name="province_cannot_be_empty">Province cannot be empty</string>
+    <string name="please_fill_in_the_number_of_cattle_you_have">Please fill in the number of cattle you have</string>
+    <string name="positive_step_handling">"\n1. Lakukan isolasi terhadap sapi yang terinfeksi PMK supaya tidak menularkan virus ke hewan ternak lainnya\n2. Berikan vitamin dan suplemen ATP\n3. Berikan Antipiretik (mengurangi suhu tubuh) dan Analgesik (mengurangi nyeri)\n4. Upayakan sapi yang terinfeksi untuk tetap makan meskipun nafsu makan menurun\n5. Pemberian obat dan vitamin dilakukan berulang hingga sapi sembuh\n                    "</string>
+    <string name="positive_description">"\n                        Oops! Sapi anda terdeteksi PMK 😥\n                        Berdasarkan gambar yang anda upload, bagian sapi tersebut terdeteksi Penyakit Mulut dan Kuku (PMK) nih. Anda bisa lakukan beberapa tips di bawah ini untuk penanganan yang harus dilakukan supaya penyakit tersebut tidak semakin menyebar.\n                    "</string>
+    <string name="positive_additional_desc">"\n                        Jangan panik dan khawatir! Anda bisa lakukan penanganan di atas kemudian lakukan pemeliharan berkala dan melakukan pengecekan kondisi sapi dengan memanfaatkan aplikasi snapmoo!\n                    "</string>
+    <string name="negative_step_handling">"\n1. Menjaga kualitas pakan\n2. Menjaga kondisi kebersihan lingkungan kandang\n3. Menjaga daya tahan tubuh ternak\n                    "</string>
+    <string name="negative_description">"\nWahh, sapi kamu tidak terinfeksi PMK!\nYukk terapkan beberapa saran ini untuk mempertahankan Kesehatan sapi dan terhindar dari PMK!\n                    "</string>
+    <string name="negative_additional_desc">"\n                        Lakukan pemeliharaan kesehatan sapi anda dengan rutin memeriksa kondisi sapi. Anda bisa memanfaatkan fitur scan pada aplikasi snapmoo secara berkala loh!\n                        "</string>
 
 </resources>

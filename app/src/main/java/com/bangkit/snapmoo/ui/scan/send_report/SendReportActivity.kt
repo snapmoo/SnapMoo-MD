@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -43,7 +44,6 @@ class SendReportActivity : AppCompatActivity(), View.OnClickListener {
         currentImageUri = Uri.parse(intent.getStringExtra("image_uri"))
         percentage = intent.getIntExtra("percentage", 0)
         indication = intent.getStringExtra("indication") ?: ""
-
 
         setData()
         setToolbar()
@@ -117,10 +117,56 @@ class SendReportActivity : AppCompatActivity(), View.OnClickListener {
             val address = binding.addressEditText.text.toString().trim()
             val city = binding.cityEditText.text.toString().trim()
             val province = binding.provinceEditText.text.toString().trim()
-            val manyHave = binding.haveEditText.text.toString().toInt()
+            val checkManyHave = binding.haveEditText.text.toString().trim()
             val condition = binding.conditionEditText.text.toString().trim()
             val prediction = indication
             val score = percentage
+
+            if (name.isEmpty()) {
+                binding.nameEditText.error = getString(R.string.name_cannot_be_empty)
+                return
+            }
+            if (phoneNumber.isEmpty()) {
+                binding.phoneNumberEditText.error = getString(R.string.phonenumber_cannot_be_empty)
+                return
+            }
+            if (email.isEmpty()) {
+                binding.emailEditText.error = getString(R.string.email_cannot_be_empty)
+                return
+            }
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                binding.emailEditText.error = getString(R.string.invalid_email_format)
+                return
+            }
+            if (address.isEmpty()) {
+                binding.addressEditText.error = getString(R.string.address_cannot_be_empty)
+                return
+            }
+            if (city.isEmpty()) {
+                binding.cityEditText.error = getString(R.string.city_cannot_be_empty)
+                return
+            }
+            if (province.isEmpty()) {
+                binding.provinceEditText.error = getString(R.string.province_cannot_be_empty)
+                return
+            }
+
+            var manyHave = 0
+
+            if (checkManyHave.isEmpty()) {
+                val number = checkManyHave.toIntOrNull()
+                if (number == null) {
+                    binding.haveEditText.error =
+                        getString(R.string.please_fill_in_the_number_of_cattle_you_have)
+                    return
+                } else {
+                    manyHave = number
+                }
+            }
+
+            if (condition.isEmpty()) {
+                binding.conditionEditText.error = ""
+            }
 
             sendReportViewModel.getSession().observe(this) { user ->
                 val token = user.token

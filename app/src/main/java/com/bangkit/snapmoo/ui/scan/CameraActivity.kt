@@ -4,8 +4,6 @@ import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -17,7 +15,6 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
-
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.CameraSelector
@@ -30,11 +27,8 @@ import com.bangkit.snapmoo.R
 import com.bangkit.snapmoo.databinding.ActivityCameraBinding
 import com.bangkit.snapmoo.ui.scan.scan_result.ScanResultActivity
 import com.bangkit.snapmoo.utils.createCustomTempFile
-import com.bangkit.snapmoo.utils.reduceFileImage
 import com.yalantis.ucrop.UCrop
 import java.io.File
-import java.nio.ByteBuffer
-import java.nio.ByteOrder
 import java.util.UUID
 
 class CameraActivity : AppCompatActivity(), View.OnClickListener {

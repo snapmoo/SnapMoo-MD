@@ -103,44 +103,26 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
                 if (roundedNumber > 50) {
                     indication = getString(R.string.positive)
                     binding.tvIndicateScanResult.text = getString(R.string.positive)
-                    binding.tvStepHandling.text = """
-1. Lakukan isolasi terhadap sapi yang terinfeksi PMK supaya tidak menularkan virus ke hewan ternak lainnya
-2. Berikan vitamin dan suplemen ATP
-3. Berikan Antipiretik (mengurangi suhu tubuh) dan Analgesik (mengurangi nyeri)
-4. Upayakan sapi yang terinfeksi untuk tetap makan meskipun nafsu makan menurun
-5. Pemberian obat dan vitamin dilakukan berulang hingga sapi sembuh
-                    """.trimIndent()
-                    binding.tvDescription.text = """
-                        Oops! Sapi anda terdeteksi PMK 😥
-                        Berdasarkan gambar yang anda upload, bagian sapi tersebut terdeteksi Penyakit Mulut dan Kuku (PMK) nih. Anda bisa lakukan beberapa tips di bawah ini untuk penanganan yang harus dilakukan supaya penyakit tersebut tidak semakin menyebar.
-                    """.trimIndent()
-                    binding.tvAdditionalDescription.text = """
-                        Jangan panik dan khawatir! Anda bisa lakukan penanganan di atas kemudian lakukan pemeliharan berkala dan melakukan pengecekan kondisi sapi dengan memanfaatkan aplikasi snapmoo!
-                    """.trimIndent()
+                    binding.tvStepHandling.text = getString(R.string.positive_step_handling).trimIndent()
+                    binding.tvDescription.text = getString(R.string.positive_description).trimIndent()
+                    binding.tvAdditionalDescription.text =
+                        getString(R.string.positive_additional_desc).trimIndent()
                     temp = roundedNumber
 
                 } else {
                     indication = getString(R.string.negative)
                     binding.tvIndicateScanResult.text = getString(R.string.negative)
-                    binding.tvStepHandling.text = """
-1. Menjaga kualitas pakan
-2. Menjaga kondisi kebersihan lingkungan kandang
-3. Menjaga daya tahan tubuh ternak
-                    """.trimIndent()
-                    binding.tvDescription.text = """
-Wahh, sapi kamu tidak terinfeksi PMK!
-Yukk terapkan beberapa saran ini untuk mempertahankan Kesehatan sapi dan terhindar dari PMK!
-                    """.trimIndent()
-                    binding.tvAdditionalDescription.text = """
-                        Lakukan pemeliharaan kesehatan sapi anda dengan rutin memeriksa kondisi sapi. Anda bisa memanfaatkan fitur scan pada aplikasi snapmoo secara berkala loh!
-                        """.trimIndent()
+                    binding.tvStepHandling.text = getString(R.string.negative_step_handling).trimIndent()
+                    binding.tvDescription.text = getString(R.string.negative_description).trimIndent()
+                    binding.tvAdditionalDescription.text =
+                        getString(R.string.negative_additional_desc).trimIndent()
                     temp = 100 - roundedNumber
                 }
                 percentage = temp
                 binding.tvScoreScan.text = "${temp}%"
                 binding.ivImageScan.setImageURI(uri)
 
-                postHistory()
+//                postHistory()
 
             } else {
                 Log.e("Error", "Failed to load image from URI")
