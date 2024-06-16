@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_700"
+    tools:context=".ui.welcome.WelcomeActivity">
+
+    <ImageView
+        android:id="@+id/split_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/grid_custom"
+        app:layout_constraintBottom_toTopOf="@id/content2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintVertical_bias="0.571" />
+
+
+    <View
+        android:id="@+id/content2"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/blue_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/split_content"
+        app:layout_constraintStart_toStartOf="@+id/split_content"
+     />
+
+    <TextView
+        android:id="@+id/tv_appName1"
+        style="@style/TitleText"
+        android:layout_marginTop="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SnapMoo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_subtitle"
+        style="@style/SubtitleText"
+        android:layout_width="280dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:text="Your FMD Detection Partner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_appName1" />
+
+    <ImageView
+        android:id="@+id/iv_cattle"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/gettingstartted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/content2"
+        app:layout_constraintTop_toBottomOf="@id/tv_subtitle" />
+
+
+    <TextView
+        android:id="@+id/tv_description"
+        style="@style/SubtitleText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="34dp"
+        android:paddingHorizontal="24dp"
+        android:text="Your Partner in Ensuring a Healthy and Happy Cattle Herd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintBottom_toTopOf="@id/btn_getting_started"/>
+
+    <ImageButton
+        android:id="@+id/btn_getting_started"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_500"
+        android:src="@drawable/button_getting_started"
+        android:text="getting started"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/content2"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

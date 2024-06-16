@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.mouth.MouthActivity">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginBottom="40dp"
+                android:background="@color/blue_100">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/custom_bg_rounded_8"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/view_pager" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="18dp">
+
+                <TextView
+                    android:id="@+id/title_case"
+                    style="@style/Heading"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Mouth Cases"
+                    android:textColor="@color/blue_700"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/sub_title_case"
+                    style="@style/Heading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:text="Symptoms of FMD in the Mouth"
+                    android:textColor="@color/white_950"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title_case" />
+
+
+                <TextView
+                    android:id="@+id/number1"
+                    style="@style/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="1"
+                    android:textColor="@color/white_950"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sub_title_case" />
+
+                <TextView
+                    android:id="@+id/symptoms_title1"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="10"
+                    android:text="Blisters on Gums and Tongue:"
+                    android:textColor="@color/white_700"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+                    app:layout_constraintTop_toTopOf="@id/number1" />
+
+                <TextView
+                    android:id="@+id/symptoms_text1"
+                    style="@style/Text"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:maxLines="10"
+                    android:text="There are blisters that burst into sores on the gums and tongue. These blisters are filled with fluid which is very painful for the animal. After some time, the blisters burst and turn into open wounds which are also prone to infection."
+                    android:textColor="@color/white_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/symptoms_title1"
+                    app:layout_constraintTop_toBottomOf="@id/symptoms_title1" />
+
+                <TextView
+                    android:id="@+id/number2"
+                    style="@style/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="2"
+                    android:textColor="@color/white_950"
+                    app:layout_constraintStart_toStartOf="@id/number1"
+                    app:layout_constraintTop_toBottomOf="@id/symptoms_text1" />
+
+                <TextView
+                    android:id="@+id/symptoms_title2"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="10"
+                    android:text="Increased Salivation:"
+                    android:textColor="@color/white_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+                    app:layout_constraintTop_toTopOf="@id/number2" />
+
+                <TextView
+                    android:id="@+id/symptoms_text2"
+                    style="@style/Text"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:maxLines="10"
+                    android:text="Excessive saliva production. This excessive saliva is usually thick in texture and can be seen dripping continuously from the animal's mouth. This occurs due to irritation and sores in the mouth that stimulate the salivary glands to produce more saliva as a pain response."
+                    android:textColor="@color/white_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/symptoms_title2"
+                    app:layout_constraintTop_toBottomOf="@id/symptoms_title2" />
+
+
+                <TextView
+                    android:id="@+id/number3"
+                    style="@style/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="3"
+                    android:textColor="@color/white_950"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/symptoms_text2" />
+
+                <TextView
+                    android:id="@+id/symptoms_title3"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="10"
+                    android:text="Difficulty Eating:"
+                    android:textColor="@color/white_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+                    app:layout_constraintTop_toTopOf="@id/number3" />
+
+                <TextView
+                    android:id="@+id/symptoms_text3"
+                    style="@style/Text"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:maxLines="10"
+                    android:text="cattle show difficulty and pain when eating. Animals infected with FMD often show signs of feeding difficulties, such as chewing slowly, stopping frequently while eating, refusing food, and loss of appetite."
+                    android:textColor="@color/white_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/symptoms_title3"
+                    app:layout_constraintTop_toBottomOf="@id/symptoms_title3" />
+
+                <TextView
+                    android:id="@+id/number4"
+                    style="@style/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="4"
+                    android:textColor="@color/white_950"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/symptoms_text3" />
+
+                <TextView
+                    android:id="@+id/symptoms_title4"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="10"
+                    android:text="Unpleasant Mouth Odor:"
+                    android:textColor="@color/white_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+                    app:layout_constraintTop_toTopOf="@id/number4" />
+
+                <TextView
+                    android:id="@+id/symptoms_text4"
+                    style="@style/Text"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:maxLines="10"
+                    android:text="Strong, unpleasant bad breath. This odor is caused by bacteria that multiply around wounds and dead tissue, as well as metabolic products produced by the bacteria. This bad breath is a sign that there is a serious infection in the animal's mouth.."
+                    android:textColor="@color/white_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/symptoms_title4"
+                    app:layout_constraintTop_toBottomOf="@id/symptoms_title4" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineVertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintGuide_percent="0.06"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="100dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/custom_bg_rounded_24"
+                android:backgroundTint="@color/blue_700"
+                android:paddingHorizontal="12dp"
+                android:paddingBottom="40dp"
+                app:layout_constraintTop_toBottomOf="@id/symptoms_text4">
+
+                <TextView
+                    android:id="@+id/treatment_title"
+                    style="@style/Heading3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Treatment of FMD Symptoms in the Mouth"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/silver_200"
+                    app:layout_constraintTop_toBottomOf="@id/treatment_title" />
+
+                <TextView
+                    android:id="@+id/number_1"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="34dp"
+                    android:text="1"
+                    android:textColor="@color/white_50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/treatment_title" />
+
+                <TextView
+                    android:id="@+id/treatment_1"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:justificationMode="inter_word"
+
+                    android:maxLines="10"
+                    android:text="Isolate infected animals to prevent the spread of the virus to other animals"
+                    android:textColor="@color/white_50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/treatment_title"
+                    app:layout_constraintTop_toTopOf="@id/number_1" />
+
+                <TextView
+                    android:id="@+id/number_2"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="2"
+                    android:textColor="@color/white_50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/treatment_1" />
+
+                <TextView
+                    android:id="@+id/treatment_2"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:justificationMode="inter_word"
+                    android:maxLines="10"
+
+                    android:text="Focus on reducing pain and supporting recovery. Analgesics and anti-inflammatories may be used to reduce pain and inflammation."
+                    android:textColor="@color/white_50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/treatment_title"
+                    app:layout_constraintTop_toTopOf="@id/number_2" />
+
+                <TextView
+                    android:id="@+id/number_3"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="3"
+                    android:textColor="@color/white_50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/treatment_2" />
+
+                <TextView
+                    android:id="@+id/treatment_3"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:maxLines="10"
+                    android:text="Clean wounds in the mouth with antiseptic to prevent secondary infection. "
+                    android:textColor="@color/white_50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/treatment_title"
+                    app:layout_constraintTop_toTopOf="@id/number_3" />
+
+                <TextView
+                    android:id="@+id/number_4"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="4"
+                    android:textColor="@color/white_50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/treatment_3" />
+
+                <TextView
+                    android:id="@+id/treatment_4"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:justificationMode="inter_word"
+                    android:maxLines="10"
+
+                    android:text="Provide foods that are soft and easy to chew to reduce pain while eating."
+                    android:textColor="@color/white_50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/treatment_title"
+                    app:layout_constraintTop_toTopOf="@id/number_4" />
+
+                <TextView
+                    android:id="@+id/number_5"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="5"
+                    android:textColor="@color/white_50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/treatment_4" />
+
+                <TextView
+                    android:id="@+id/treatment_5"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:justificationMode="inter_word"
+                    android:maxLines="10"
+                    android:text="Consult a veterinarian for a proper diagnosis and appropriate treatment recommendations."
+                    android:textColor="@color/white_50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/treatment_title"
+                    app:layout_constraintTop_toTopOf="@id/number_5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

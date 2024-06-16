@@ -1,0 +1,2 @@
+app/src/main/ml/model2.tflite filter=lfs diff=lfs merge=lfs -text
+*.tflite filter=lfs diff=lfs merge=lfs -text

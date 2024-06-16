@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">SnapMoo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="scan">Scan</string>
+    <string name="report">Report</string>
+    <string name="profile">Profile</string>
+    <string name="scan_menu">Scan Menu</string>
+
+    <string name="logout">Logout</string>
+    <string name="logout_desc">Are you sure you want to logout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="logout_success">Logout success!</string>
+    <string name="camera_permission_request_granted">Camera permission request granted!</string>
+    <string name="camera_permission_request_denied">Camera permission request denied!</string>
+    <string name="predict_success">Image prediction successful!</string>
+    <string name="predict_failed">Image prediction failed!</string>
+    <string name="location_found">Location is found.</string>
+    <string name="location_not_found">Location is not found. Try enabling GPS!</string>
+    <string name="positive">Positive</string>
+    <string name="negative">Negative</string>
+    <string name="login_success">Login Success!</string>
+    <string name="email_cannot_be_empty">Email cannot be empty</string>
+    <string name="password_cannot_be_empty">Password cannot be empty</string>
+    <string name="name_cannot_be_empty">Name cannot be empty</string>
+    <string name="phonenumber_cannot_be_empty">Phone number cannot be empty</string>
+    <string name="cropped_image_uri_is_null">Cropped image URI is null</string>
+    <string name="failed_to_crop_the_image">Failed to crop the image.</string>
+
+</resources>

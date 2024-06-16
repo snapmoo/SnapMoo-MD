@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="450dp">
+
+                <ImageView
+                    android:id="@+id/iv_bg_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/custom_bg_profile" />
+
+                <ImageButton
+                    android:id="@+id/btn_setting"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/custom_bg_rounded_24"
+                    android:backgroundTint="@color/blue_900"
+                    android:src="@drawable/icon_setting"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_photo_profile"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="40dp"
+                    app:civ_border_color="@color/silver_300"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_setting"
+                    tools:src="@drawable/photo_profile" />
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    style="@style/Heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintEnd_toEndOf="@id/civ_photo_profile"
+                    app:layout_constraintStart_toStartOf="@id/civ_photo_profile"
+                    app:layout_constraintTop_toBottomOf="@id/civ_photo_profile"
+                    tools:text="Adi Widyantara" />
+
+                <TextView
+                    android:id="@+id/tv_gmail"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/silver_200"
+                    app:layout_constraintEnd_toEndOf="@id/tv_username"
+                    app:layout_constraintStart_toStartOf="@id/tv_username"
+                    app:layout_constraintTop_toBottomOf="@id/tv_username"
+                    tools:text="adiwid@bangkit.academy" />
+
+                <Button
+                    android:id="@+id/btn_edit_profile"
+                    style="@style/CustomButtonEdit"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:text="Edit Profile"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_bg_profile"
+                    app:layout_constraintEnd_toEndOf="@+id/iv_bg_profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_bg_profile" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view_history"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/custom_bg_outline">
+
+                <ImageView
+                    android:id="@+id/iv_imageHistory"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="24dp"
+                    android:contentDescription="History"
+                    android:src="@drawable/icon_profile_history"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_history"
+                    style="@style/Heading3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="History"
+                    android:textColor="@color/silver_700"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_imageHistory"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imageHistory"
+                    app:layout_constraintTop_toTopOf="@+id/iv_imageHistory" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/arrow_right" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view_bookmark"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/custom_bg_outline">
+
+                <ImageView
+                    android:id="@+id/iv_imageBookmark"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="24dp"
+                    android:contentDescription="History"
+                    android:src="@drawable/icon_profile_bookmark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_bookmark"
+                    style="@style/Heading3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Bookmark"
+                    android:textColor="@color/silver_700"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_imageBookmark"
+                    app:layout_constraintStart_toEndOf="@+id/iv_imageBookmark"
+                    app:layout_constraintTop_toTopOf="@+id/iv_imageBookmark" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/arrow_right" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progressBar"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@drawable/custom_bg_rounded_8"
+        android:backgroundTint="@color/blue_50"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.udder.UdderActivity">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginBottom="40dp"
+                android:background="@color/blue_100">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="260dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/custom_bg_rounded_8"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/view_pager" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="18dp">
+
+                <TextView
+                    android:id="@+id/title_case"
+                    style="@style/Heading"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Udder Cases"
+                    android:textColor="@color/blue_700"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/sub_title_case"
+                    style="@style/Heading2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:text="Symptoms of FMD in the Udder"
+                    android:textColor="@color/white_950"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title_case" />
+
+
+                <TextView
+                    android:id="@+id/number1"
+                    style="@style/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="@color/white_800"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintTop_toBottomOf="@id/sub_title_case" />
+
+                <TextView
+                    android:id="@+id/symptoms_title1"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="10"
+                    android:text="Decrease in Milk Production:"
+                    android:textColor="@color/white_800"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+                    app:layout_constraintTop_toTopOf="@id/number1" />
+
+                <TextView
+                    android:id="@+id/symptoms_text1"
+                    style="@style/Text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:justificationMode="inter_word"
+                    android:maxLines="10"
+                    android:text="Drastic reduction in milk production. Cows affected by FMD experience severe physical stress and pain, as well as decreased appetite and nutrient intake. As a result, the cow's body is unable to produce the usual amount of milk, often reducing milk production by more than 50%."
+                    android:textColor="@color/white_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/symptoms_title1"
+                    app:layout_constraintTop_toBottomOf="@id/symptoms_title1" />
+
+                <TextView
+                    android:id="@+id/number2"
+                    style="@style/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="2"
+                    android:textColor="@color/white_800"
+                    app:layout_constraintStart_toStartOf="@id/number1"
+                    app:layout_constraintTop_toBottomOf="@id/symptoms_text1" />
+
+                <TextView
+                    android:id="@+id/symptoms_title2"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="10"
+                    android:text="Changes in Milk Consistency:"
+                    android:textColor="@color/white_800"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+                    app:layout_constraintTop_toTopOf="@id/number2" />
+
+                <TextView
+                    android:id="@+id/symptoms_text2"
+                    style="@style/Text"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:maxLines="10"
+                    android:text="Milk becomes thinner or frothy. The milk produced by the cow becomes thinner than usual. Milk also foams due to changes in the biochemical composition of the milk due to viral infection. These changes can make the milk unfit for consumption."
+                    android:textColor="@color/white_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/symptoms_title2"
+                    app:layout_constraintTop_toBottomOf="@id/symptoms_title2" />
+
+
+                <TextView
+                    android:id="@+id/number3"
+                    style="@style/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="3"
+                    android:textColor="@color/white_800"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/symptoms_text2" />
+
+                <TextView
+                    android:id="@+id/symptoms_title3"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="10"
+                    android:text="Nipple Blisters:"
+                    android:textColor="@color/white_800"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
+                    app:layout_constraintTop_toTopOf="@id/number3" />
+
+                <TextView
+                    android:id="@+id/symptoms_text3"
+                    style="@style/Text"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:maxLines="10"
+                    android:text="   Blisters and sores occur on the nipples. These blisters are filled with fluid and are very painful for the cow. When the blisters burst, it leaves an open wound that is prone to infection. These sores cause pain which often causes the cow to refuse to milk."
+                    android:textColor="@color/white_700"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/symptoms_title3"
+                    app:layout_constraintTop_toBottomOf="@id/symptoms_title3" />
+
+                <!--<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="24dp"
+                    android:background="@drawable/custom_bg_rounded_8"
+                    android:backgroundTint="@color/blue_100"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="12dp"
+                    app:layout_constraintTop_toBottomOf="@id/symptoms_text3"
+                    tools:layout_editor_absoluteX="42dp"
+                    tools:layout_editor_absoluteY="515dp">
+
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="2dp"
+                        android:background="@color/blue_700" />
+
+                    <TextView
+                        android:id="@+id/description"
+                        style="@style/Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:justificationMode="inter_word"
+                        android:maxLines="10"
+                        android:text="The above symptoms can be caused by various conditions such as bacterial or fungal infections, physical trauma, allergies, or systemic diseases."
+                        android:textColor="@color/white_950"
+
+                        />
+
+                </LinearLayout>-->
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineVertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintGuide_percent="0.06"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:layout_marginBottom="100dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/custom_bg_rounded_24"
+                android:backgroundTint="@color/blue_700"
+                android:paddingHorizontal="12dp"
+                android:paddingBottom="40dp"
+                app:layout_constraintTop_toBottomOf="@id/symptoms_text4">
+
+                <TextView
+                    android:id="@+id/treatment_title"
+                    style="@style/Heading3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Treatment of FMD Symptoms in the Udder"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/silver_200"
+                    app:layout_constraintTop_toBottomOf="@id/treatment_title" />
+
+                <TextView
+                    android:id="@+id/number_1"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="34dp"
+                    android:text="1"
+                    android:textColor="@color/white_50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/treatment_title" />
+
+                <TextView
+                    android:id="@+id/treatment_1"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:justificationMode="inter_word"
+
+                    android:maxLines="10"
+                    android:text="Isolate infected animals to prevent the spread of the virus to other animals."
+                    android:textColor="@color/white_50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/treatment_title"
+                    app:layout_constraintTop_toTopOf="@id/number_1" />
+
+                <TextView
+                    android:id="@+id/number_2"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="2"
+                    android:textColor="@color/white_50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/treatment_1" />
+
+                <TextView
+                    android:id="@+id/treatment_2"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:justificationMode="inter_word"
+                    android:maxLines="10"
+
+                    android:text="Symptomatic treatment aimed at reducing pain and supporting recovery."
+                    android:textColor="@color/white_50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/treatment_title"
+                    app:layout_constraintTop_toTopOf="@id/number_2" />
+
+                <TextView
+                    android:id="@+id/number_3"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="3"
+                    android:textColor="@color/white_50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/treatment_2" />
+
+                <TextView
+                    android:id="@+id/treatment_3"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:maxLines="10"
+                    android:text="Nipple wounds should be cleaned regularly and treated with antiseptic to prevent infection."
+                    android:textColor="@color/white_50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/treatment_title"
+                    app:layout_constraintTop_toTopOf="@id/number_3" />
+
+                <TextView
+                    android:id="@+id/number_4"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="4"
+                    android:textColor="@color/white_50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/treatment_3" />
+
+                <TextView
+                    android:id="@+id/treatment_4"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:justificationMode="inter_word"
+                    android:maxLines="10"
+                    android:text="rovide adequate nutrition to support the animal's immune system."
+                    android:textColor="@color/white_50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/treatment_title"
+                    app:layout_constraintTop_toTopOf="@id/number_4" />
+
+                <TextView
+                    android:id="@+id/number_5"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:text="5"
+                    android:textColor="@color/white_50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/treatment_4" />
+
+                <TextView
+                    android:id="@+id/treatment_5"
+                    style="@style/BodyTextInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:justificationMode="inter_word"
+                    android:maxLines="10"
+                    android:text="Consult a veterinarian for a proper diagnosis and appropriate treatment recommendations."
+                    android:textColor="@color/white_50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/treatment_title"
+                    app:layout_constraintTop_toTopOf="@id/number_5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <ScrollView
+        android:id="@+id/fragment_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_100"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_gravity="start"
+                    android:layout_marginEnd="0dp">
+
+                    <TextView
+                        android:id="@+id/tv_greeting"
+                        style="@style/Heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Hello,"
+                        android:textColor="@color/blue_600"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- <ImageView
+                         android:layout_width="20dp"
+                         android:layout_height="30dp"
+                         android:paddingBottom="6dp"
+                         android:src="@drawable/icon_location"
+                         app:layout_constraintBottom_toBottomOf="@id/tv_greeting"
+                         app:layout_constraintStart_toEndOf="@id/tv_greeting"
+                         app:layout_constraintTop_toTopOf="parent" />-->
+
+                    <TextView
+                        style="@style/Heading"
+                        android:id="@+id/tv_greeting_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        tools:text="Adi Widyantara"
+                        android:textColor="@color/white_800"
+                        app:layout_constraintStart_toStartOf="@id/tv_greeting"
+                        app:layout_constraintTop_toBottomOf="@id/tv_greeting" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="2dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_photo_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:foregroundGravity="right"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@drawable/photo_profile" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="40dp"
+                app:cardCornerRadius="18dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/custom_bg_heading_home">
+
+                    <TextView
+                        android:id="@+id/tv_title_content1"
+                        style="@style/Heading2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+
+                        android:layout_marginTop="12dp"
+
+                        android:text="FMD Danger: Ready to Survive!"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_subtitle_content1"
+                        style="@style/Heading3"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Too many farmers are surprised and realize too late how deadly FMD can be"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/tv_title_content1"
+                        app:layout_constraintTop_toBottomOf="@id/tv_title_content1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="30dp"
+                        android:paddingBottom="-20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_cattle_shadow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/route_to_camera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_bg_shortcut_scan">
+
+                    <TextView
+                        android:id="@+id/tv_title_shortcutScan"
+                        style="@style/Heading3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="18dp"
+                        android:text="Protect from FMD"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_check"
+                        style="@style/BodyTextInfo"
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginBottom="20dp"
+                        android:text="Check Your Cattle Now"
+                        android:textColor="@color/silver_200"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/tv_title_shortcutScan"
+                        app:layout_constraintTop_toBottomOf="@id/tv_title_shortcutScan" />
+
+                    <ImageButton
+                        android:id="@+id/btn_icon_camera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/icon_shortcut_scan"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="100dp"
+                android:background="@drawable/custom_bg_fill_light_blue"
+                android:backgroundTint="@color/white_50">
+
+                <TextView
+                    android:id="@+id/tv_sysmptoms"
+                    style="@style/SubtitleText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="26dp"
+                    android:text="FMD Symptoms: Focus on Body Parts"
+                    android:textColor="@color/blue_500"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <GridLayout
+                    android:id="@+id/grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="26dp"
+                    android:layout_marginBottom="24dp"
+                    android:columnCount="3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_sysmptoms">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/custom_bg_outline"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:id="@+id/btn_foot"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="Foot"
+                                android:src="@drawable/foot" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <TextView
+                            style="@style/Heading3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Foot"
+                            android:textColor="@color/blue_500"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/grid">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/custom_bg_outline"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:id="@+id/btn_mouth"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="Foot"
+                                android:src="@drawable/mouth" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            style="@style/Heading3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Mouth"
+                            android:textColor="@color/blue_500"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <!--                    <LinearLayout-->
+                    <!--                        android:layout_width="0dp"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_columnWeight="1"-->
+                    <!--                        android:layout_margin="8dp"-->
+                    <!--                        android:gravity="center"-->
+
+                    <!--                        android:orientation="vertical"-->
+                    <!--                        android:padding="16dp">-->
+
+                    <!--                        <ImageButton-->
+                    <!--                            android:id="@+id/btn_mouth"-->
+                    <!--                            android:layout_width="90dp"-->
+                    <!--                            android:layout_height="90dp"-->
+                    <!--                            android:contentDescription="Mouth"-->
+                    <!--                            android:src="@drawable/mouth" />-->
+
+                    <!--                        <TextView-->
+                    <!--                            style="@style/Heading3"-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_marginTop="8dp"-->
+                    <!--                            android:text="Mouth"-->
+                    <!--                            android:textColor="@color/blue_500"-->
+                    <!--                            android:textSize="14sp" />-->
+                    <!--                    </LinearLayout>-->
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_margin="4dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/custom_bg_outline"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:id="@+id/btn_udder"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="Foot"
+                                android:src="@drawable/udder" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            style="@style/Heading3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Udder"
+                            android:textColor="@color/blue_500"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </GridLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progressBar"
+        tools:visibility="gone"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@drawable/custom_bg_rounded_8"
+        android:backgroundTint="@color/blue_50"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading" />
+</androidx.constraintlayout.widget.ConstraintLayout>

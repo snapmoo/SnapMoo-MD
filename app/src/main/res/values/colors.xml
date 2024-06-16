@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--Bluer-->
+    <color name="blue_50">#eff7ff</color>
+    <color name="blue_100">#daedff</color>
+    <color name="blue_200">#bde0ff</color>
+    <color name="blue_300">#90cdff</color>
+    <color name="blue_400">#58aefe</color>
+
+    <color name="blue_500">#368ffb</color>
+    <color name="blue_600">#2070f0</color>
+    <color name="blue_700">#185add</color>
+    <color name="blue_800">#1a49b3</color>
+    <color name="blue_900">#1b418d</color>
+    <color name="blue_950">#152956</color>
+
+
+    <!--Silver-->
+    <color name="silver_50">#f7f7f7</color>
+    <color name="silver_100">#ededed</color>
+    <color name="silver_200">#dfdfdf</color>
+    <color name="silver_300">#c8c8c8</color>
+    <color name="silver_400">#a9a9a9</color>
+    <color name="silver_500">#999999</color>
+    <color name="silver_600">#888888</color>
+    <color name="silver_700">#7b7b7b</color>
+    <color name="silver_800">#676767</color>
+    <color name="silver_950">#363636</color>
+
+    <!--White-->
+
+    <color name="white_50">#ffffff</color>
+    <color name="white_100">#efefef</color>
+    <color name="white_200">#dcdcdc</color>
+    <color name="white_300">#bdbdbd</color>
+    <color name="white_400">#989898</color>
+    <color name="white_500">#7c7c7c</color>
+    <color name="white_600">#656565</color>
+    <color name="white_700">#525252</color>
+    <color name="white_800">#464646</color>
+    <color name="white_900">#3d3d3d</color>
+    <color name="white_950">#292929</color>
+
+
+</resources>

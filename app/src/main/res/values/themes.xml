@@ -1,0 +1,161 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SnapMoo" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/white_50</item>
+        <item name="colorPrimaryVariant">@color/blue_500</item>
+        <item name="colorOnPrimary">@color/white_50</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue_700</item>
+        <item name="colorSecondaryVariant">@color/silver_700</item>
+        <item name="colorOnSecondary">@color/white_950</item>
+    </style>
+
+    <style name="Theme.SnapMoo" parent="Base.Theme.SnapMoo" />
+
+    <style name="TitleText">
+        <item name="android:textSize">40sp</item>
+        <item name="android:fontWeight">800</item> <!-- ExtraBold -->
+        <item name="android:textColor">@color/blue_400</item>
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:layout_marginBottom">40dp</item>
+        <item name="fontFamily">@font/poppins_extrabold</item> <!-- Custom Font Family -->
+    </style>
+
+    <!-- Style untuk Subjudul -->
+    <style name="SubtitleText">
+        <item name="android:textSize">25sp</item>
+        <item name="android:fontWeight">700</item><!--Bold-->
+        <item name="android:textColor">@color/white_50</item>
+        <item name="fontFamily">@font/poppins_bold</item> <!-- Custom Font Family -->
+    </style>
+    <style name="SubtitleText2">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/white_100</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="fontFamily">@font/poppins_semibold</item> <!-- Custom Font Family -->
+    </style>
+
+    <style name="Toolbar">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontWeight">700</item><!--Bold-->
+        <item name="android:textColor">@color/white_700</item>
+        <item name="fontFamily">@font/poppins_semibold</item> <!-- Custom Font Family -->
+    </style>
+
+    <style name="Heading">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontWeight">700</item><!--Bold-->
+        <item name="android:textColor">@color/white_50</item>
+        <item name="android:layout_marginBottom">15dp</item>
+        <item name="fontFamily">@font/poppins_bold</item> <!-- Custom Font Family -->
+    </style>
+    <style name="Heading2">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontWeight">600</item><!--Bold-->
+        <item name="android:textColor">@color/white_50</item>
+
+        <item name="fontFamily">@font/poppins_semibold</item> <!-- Custom Font Family -->
+    </style>
+
+    <style name="DescriptionText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontWeight">700</item><!--Bold-->
+        <item name="android:textColor">@color/silver_700</item>
+        <item name="fontFamily">@font/poppins_bold</item> <!-- Custom Font Family -->
+    </style>
+
+    <!-- Style untuk Deskripsi -->
+
+
+    <!-- Style untuk Teks Biasa -->
+    <style name="Heading3">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/white_50</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="Heading4">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/white_700</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <!-- Style untuk Teks Biasa -->
+    <style name="BodyTextInfo">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontWeight">500</item>
+        <item name="android:textColor">@color/silver_500</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+    </style>
+    <style name="Text">
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontWeight">400</item>
+        <item name="android:textColor">@color/silver_400</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+<!--BUTTON CUSTOM-->
+    <style name="CustomButtonPrimary">
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/custom_bg_gradient_ligth</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontWeight">600</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="CustomButtonSecondary">
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/custom_bg_outline</item>
+        <item name="android:textColor">@color/white_700</item>
+        <item name="boxStrokeColor">@color/silver_300</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="CustomButtonEdit">
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/custom_bg_gradient_dark</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+<!--PLACEHOLDER CUSTOM-->
+
+    <style name="Widget.Custom.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxStrokeColor">@color/blue_500</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="hintEnabled">false</item>
+        <item name="hintTextColor">@color/silver_300</item>
+        <item name="helperTextTextColor">@color/blue_500</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
+    <!-- Base style for TextInputEditText -->
+    <style name="Widget.Custom.TextInputEditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:textColor">@color/silver_200</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <!-- Base style for TextInputEditText -->
+
+
+
+
+</resources>
