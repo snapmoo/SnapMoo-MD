@@ -26,37 +26,6 @@ class MainActivity : AppCompatActivity() {
         setupActionBottomMenu()
     }
 
-    /*
-
-        private fun switchFragment(fragment: Fragment) {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.container, fragment)
-                .commit()
-        }
-
-        @Suppress("DEPRECATION")
-        private fun setupActionBottomMenu() {
-            binding.bottomNavigationView.background = null // hide abnormal layer in bottom nav
-
-            switchFragment(fragmentHome)
-
-            binding.bottomNavigationView.setOnNavigationItemSelectedListener {
-                when (it.itemId) {
-                    R.id.navigation_home -> switchFragment(fragmentHome)
-                    R.id.navigation_search -> switchFragment(fragmentSearch)
-                    R.id.navigation_report -> switchFragment(fragmentReport)
-                    R.id.navigation_profile -> switchFragment(fragmentProfile)
-                    R.id.navigation_scan -> startCameraX()
-                }
-                true
-            }
-            binding.fab.setOnClickListener {
-                startCameraX()
-            }
-        }
-    */
-
     private fun setupActionBottomMenu() {
         val bottomNavView: BottomNavigationView = binding.bottomNavView
         val bottomNavController = findNavController(R.id.bottom_nav_host_fragment)

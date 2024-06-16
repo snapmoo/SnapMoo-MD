@@ -2,6 +2,7 @@ package com.bangkit.snapmoo.ui.auth.register
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -58,15 +59,23 @@ class RegisterActivity : AppCompatActivity() {
 
         if (name.isEmpty()) {
             binding.nameEditText.error = getString(R.string.name_cannot_be_empty)
+            return
         }
         if (email.isEmpty()) {
             binding.emailEditText.error = getString(R.string.email_cannot_be_empty)
+            return
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            binding.emailEditText.error = getString(R.string.invalid_email_format)
+            return
         }
         if (password.isEmpty()) {
             binding.passwordEditText.error = getString(R.string.password_cannot_be_empty)
+            return
         }
         if (phoneNumber.isEmpty()) {
             binding.passwordEditText.error = getString(R.string.phonenumber_cannot_be_empty)
+            return
         }
         if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && phoneNumber.isNotEmpty()) {
             registerViewModel.register(name, email, password, phoneNumber).observe(this) { result ->
@@ -77,7 +86,6 @@ class RegisterActivity : AppCompatActivity() {
 
                     is Result.Success -> {
                         showLoading(false)
-//                        showToast(getString(R.string.register_success) + "\n" + getString(R.string.after_register))
                         val intent = Intent(this, LoginActivity::class.java)
                         intent.flags =
                             Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
