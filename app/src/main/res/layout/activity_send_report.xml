@@ -36,6 +36,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
                 android:layout_marginHorizontal="24dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -57,7 +58,7 @@
                     <TextView
 
                         android:id="@+id/tv_clasify_result"
-                        style="@style/Heading"
+                        style="@style/Heading2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
@@ -67,10 +68,13 @@
 
                     <TextView
                         android:id="@+id/tv_description"
-                        style="@style/Heading2"
+                        style="@style/Heading4"
+                        android:textColor="@color/silver_200"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
+                        android:maxLines="2"
+                        app:layout_constraintEnd_toStartOf="@id/tv_score"
                         android:text="FMD Indication"
                         app:layout_constraintStart_toEndOf="@id/iv_image_scan"
                         app:layout_constraintTop_toBottomOf="@id/tv_clasify_result" />
@@ -110,6 +114,8 @@
                 android:paddingHorizontal="6dp">
 
                 <TextView
+                    style="@style/Heading3"
+                    android:textColor="@color/silver_700"
                     android:id="@+id/title_content_user_information"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -234,10 +240,12 @@
                 android:paddingHorizontal="6dp">
 
                 <TextView
+                    style="@style/Heading3"
                     android:id="@+id/title_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
+                    android:textColor="@color/silver_700"
                     android:text="Location Details"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -362,6 +370,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
+                    style="@style/Heading3"
+                    android:textColor="@color/silver_700"
                     android:text="Livestock Infromation"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -409,12 +419,13 @@
 
                 <TextView
                     android:id="@+id/tv_description_condition"
-                    style="@style/BodyTextInfo"
+                    style="@style/Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="12dp"
                     android:maxLines="3"
+                    app:layout_constraintEnd_toEndOf="@+id/conditionInputLayout"
                     android:text="enter a description of the condition of your cattle (optional)"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_condition" />

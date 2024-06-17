@@ -134,6 +134,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/subtitle"
                     tools:text="Your cattle have shown symptoms indicative of Foot-and-Mouth Disease (FMD). FMD is a highly contagious viral disease requiring immediate action to prevent further spread and minimize impact on the health of your livestock." />
@@ -146,6 +147,7 @@
                     android:layout_marginTop="12dp"
                     android:text="Steps for Handling Cattle Positive for FMD"
                     android:textColor="@color/blue_900"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_description" />
 
@@ -219,8 +221,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-
-            android:text="request assistance"
+            android:text="Request Assistance"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
@@ -228,11 +229,11 @@
 
         <ImageButton
             android:id="@+id/imageButton"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_margin="12dp"
             android:background="@drawable/custom_bg_outline"
-            android:src="@drawable/button_bookmark"
+            android:src="@drawable/icon_bookmark_true"
             app:layout_constraintBottom_toBottomOf="@+id/btn_request"
             app:layout_constraintEnd_toStartOf="@id/guidelineVertical"
             app:layout_constraintStart_toStartOf="parent"

@@ -5,37 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_marginHorizontal="8dp"
-    android:layout_marginVertical="2dp">
+    android:layout_marginVertical="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:paddingVertical="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/iv_img_news"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/img_news"
             android:layout_width="140dp"
             android:layout_height="140dp"
-            android:scaleType="centerCrop"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/image_scan" />
+            card_view:cardCornerRadius="18dp"
+            card_view:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:id="@+id/iv_img_news"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:background="@drawable/custom_bg_rounded_8"
+                android:scaleType="centerCrop"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/image_scan" />
+        </androidx.cardview.widget.CardView>
+
 
         <TextView
+            style="@style/Text"
             android:id="@+id/tv_publishAt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:textColor="@color/silver_400"
-            card_view:layout_constraintStart_toEndOf="@id/iv_img_news"
+            card_view:layout_constraintStart_toEndOf="@id/img_news"
             card_view:layout_constraintTop_toTopOf="parent"
             tools:text="May 24, 2024" />
 
         <TextView
             android:id="@+id/tv_title"
-            style="@style/Heading2"
+            style="@style/Heading3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -48,31 +58,40 @@
             tools:text="New Outbreak of Foot-and-Mouth Disease Detected in West Java" />
 
         <LinearLayout
+            android:id="@+id/image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             card_view:layout_constraintStart_toStartOf="@id/tv_publishAt"
             card_view:layout_constraintTop_toBottomOf="@id/tv_title">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/iv_author_logo"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                tools:src="@drawable/image_scan"
                 android:layout_gravity="start"
                 android:scaleType="centerCrop" />
 
-            <TextView
-                android:id="@+id/tv_author"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="12dp"
-                android:maxLines="2"
-                android:textSize="10sp"
-                tools:text="BBC News" />
+
 
 
         </LinearLayout>
+
+        <TextView
+            style="@style/Text"
+            android:id="@+id/tv_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="12dp"
+            android:maxLines="2"
+            android:textSize="10sp"
+            card_view:layout_constraintBottom_toBottomOf="@id/image"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@id/image"
+            card_view:layout_constraintTop_toTopOf="@id/image"
+            tools:text="BBC News" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

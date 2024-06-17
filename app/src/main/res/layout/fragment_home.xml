@@ -42,25 +42,19 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <!-- <ImageView
-                         android:layout_width="20dp"
-                         android:layout_height="30dp"
-                         android:paddingBottom="6dp"
-                         android:src="@drawable/icon_location"
-                         app:layout_constraintBottom_toBottomOf="@id/tv_greeting"
-                         app:layout_constraintStart_toEndOf="@id/tv_greeting"
-                         app:layout_constraintTop_toTopOf="parent" />-->
+
+
 
                     <TextView
-                        style="@style/Heading"
                         android:id="@+id/tv_greeting_name"
+                        style="@style/Heading"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
-                        tools:text="Adi Widyantara"
                         android:textColor="@color/white_800"
                         app:layout_constraintStart_toStartOf="@id/tv_greeting"
-                        app:layout_constraintTop_toBottomOf="@id/tv_greeting" />
+                        app:layout_constraintTop_toBottomOf="@id/tv_greeting"
+                        tools:text="Adi Widyantara" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -116,8 +110,8 @@
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
 
-                        android:layout_marginBottom="20dp"
                         android:layout_marginTop="8dp"
+                        android:layout_marginBottom="20dp"
                         android:text="Too many farmers are surprised and realize too late how deadly FMD can be"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@id/tv_title_content1"
@@ -355,9 +349,9 @@
 
         </LinearLayout>
     </ScrollView>
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/progressBar"
-        tools:visibility="gone"
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:background="@drawable/custom_bg_rounded_8"
@@ -369,5 +363,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/loading" />
+        app:lottie_rawRes="@raw/loading"
+        tools:visibility="gone" />
 </androidx.constraintlayout.widget.ConstraintLayout>

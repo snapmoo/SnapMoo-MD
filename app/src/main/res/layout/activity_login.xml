@@ -5,14 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".ui.auth.register.RegisterActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:paddingHorizontal="12dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="match_parent">
         <TextView
             android:id="@+id/tv_subtitle"
             style="@style/Heading"
@@ -130,6 +128,8 @@
             style="@style/CustomButtonPrimary"
             android:layout_width="220dp"
             android:layout_height="50dp"
+            android:layout_marginTop="100dp"
+            app:layout_constraintTop_toBottomOf="@id/passwordInputLayout"
             android:text="Login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -142,9 +142,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="28dp"
             android:layout_marginBottom="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:text="Create Account"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_login" />
