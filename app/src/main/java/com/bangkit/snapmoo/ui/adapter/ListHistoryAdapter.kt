@@ -1,12 +1,13 @@
 package com.bangkit.snapmoo.ui.adapter
 
 import android.view.LayoutInflater
-import android.view.View.GONE
-import android.view.View.VISIBLE
+import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bangkit.snapmoo.R
 import com.bangkit.snapmoo.data.api.response.HistoryResult
 import com.bangkit.snapmoo.databinding.ItemRowHistoryBinding
 import com.bumptech.glide.Glide
@@ -50,15 +51,15 @@ class ListHistoryAdapter :
                 tvDateHistory.text = readableDate
                 val showButton = items.isSaved
                 if (showButton) {
-                    addToBookmark.visibility = GONE
+                    addToBookmark.visibility = View.GONE
                 } else {
-                    addToBookmark.visibility = VISIBLE
-
+                    addToBookmark.visibility = View.VISIBLE
                 }
                 addToBookmark.setOnClickListener {
                     onClick?.invoke(items)
                 }
             }
+
         }
 
         private fun convertTimestampToReadableDate(seconds: Long?, nanoseconds: Long?): String {

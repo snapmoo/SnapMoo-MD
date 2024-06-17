@@ -46,7 +46,7 @@ class ListBookmarkAdapter : ListAdapter<HistoryResult, ListBookmarkAdapter.MyVie
             )
             binding.apply {
 //                tvScan.text = items.name
-                tvClasifyResult.text = "${items.result} : ${items.score}%"
+                tvClassifyResult.text = "${items.result} : ${items.score}%"
                 tvIdHistory.text = items.historyId
                 tvDateHistory.text = readableDate
                 tvDeleteBookmark.setOnClickListener {

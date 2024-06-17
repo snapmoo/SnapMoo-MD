@@ -2,6 +2,7 @@ package com.bangkit.snapmoo.ui.auth.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -49,10 +50,19 @@ class LoginActivity : AppCompatActivity() {
             binding.emailEditText.error = getString(R.string.email_cannot_be_empty)
             return
         }
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            binding.emailEditText.error = getString(R.string.invalid_email_format)
+            return
+        }
         if (password.isEmpty()) {
             binding.passwordEditText.error = getString(R.string.password_cannot_be_empty)
             return
         }
+        if (password.length < 6) {
+            binding.passwordEditText.error = "Password must contain at least 6 characters"
+            return
+        }
+
         if (email.isNotEmpty() && password.isNotEmpty()) {
             loginViewModel.login(email, password).observe(this) { result ->
                 when (result) {
@@ -62,9 +72,18 @@ class LoginActivity : AppCompatActivity() {
 
                     is Result.Success -> {
                         val user = result.data.data
+                        var url = ""
+                        if (user.photo == null) {
+                            url = ""
+                        } else {
+                            url = user.photo
+                        }
                         loginViewModel.saveSession(
                             UserModel(
                                 user.userId,
+                                user.name,
+                                user.email,
+                                url,
                                 user.token,
                                 true
                             )

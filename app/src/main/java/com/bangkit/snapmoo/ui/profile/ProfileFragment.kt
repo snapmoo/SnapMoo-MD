@@ -1,24 +1,24 @@
 package com.bangkit.snapmoo.ui.profile
 
 import android.content.Intent
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.bangkit.snapmoo.R
-import com.bangkit.snapmoo.data.Result
 import com.bangkit.snapmoo.databinding.FragmentProfileBinding
-
+import com.bangkit.snapmoo.ui.MainViewModelFactory
 import com.bangkit.snapmoo.ui.profile.bookmark.BookmarkActivity
 import com.bangkit.snapmoo.ui.profile.edit_profile.EditProfileActivity
 import com.bangkit.snapmoo.ui.profile.history.HistoryActivity
 import com.bangkit.snapmoo.ui.profile.setting.SettingActivity
-import com.bangkit.snapmoo.ui.MainViewModelFactory
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bangkit.snapmoo.data.Result
 
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
@@ -34,6 +34,7 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -46,7 +47,6 @@ class ProfileFragment : Fragment() {
                 profileViewModel.getUserData(token).observe(viewLifecycleOwner) { result ->
                     when (result) {
                         is Result.Loading -> {
-                            showLoading(true)
                         }
 
                         is Result.Success -> {
@@ -55,6 +55,8 @@ class ProfileFragment : Fragment() {
                             if (data.photo != null) {
                                 Glide.with(requireActivity())
                                     .load(data.photo)
+                                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                                    .skipMemoryCache(true)
                                     .into(binding.civPhotoProfile)
                             } else {
                                 binding.civPhotoProfile.setImageResource(R.drawable.photo_profile)
@@ -71,8 +73,6 @@ class ProfileFragment : Fragment() {
                 }
             }
         }
-
-
         setupAction()
     }
 
@@ -108,7 +108,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun showLoading(isLoading: Boolean) {
-        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+//        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
 

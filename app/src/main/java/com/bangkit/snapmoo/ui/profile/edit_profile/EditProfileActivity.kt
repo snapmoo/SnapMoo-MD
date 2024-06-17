@@ -14,6 +14,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bangkit.snapmoo.R
 import com.bangkit.snapmoo.data.Result
+import com.bangkit.snapmoo.data.pref.UserModel
 import com.bangkit.snapmoo.databinding.ActivityEditProfileBinding
 import com.bangkit.snapmoo.ui.MainActivity
 import com.bangkit.snapmoo.ui.MainViewModelFactory
@@ -134,6 +135,16 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
         val name = binding.nameEditText.text.toString().trim()
         val phoneNumber = binding.phoneNumberEditText.text.toString().trim()
 
+        if (name.isEmpty()) {
+            binding.nameEditText.error = getString(R.string.name_cannot_be_empty)
+            return
+        }
+        if (phoneNumber.isEmpty()) {
+            binding.phoneNumberEditText.error = getString(R.string.phonenumber_cannot_be_empty)
+            return
+        }
+
+
         editProfileViewModel.getSession().observe(this) { user ->
             val token = user.token
             if (token.isNotEmpty()) {
@@ -159,6 +170,7 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
                                 startActivity(intent)
                                 finish()
                             }
+
 
                             is Result.Error -> {
                                 showLoading(false)

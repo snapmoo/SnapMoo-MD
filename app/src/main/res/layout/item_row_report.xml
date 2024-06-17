@@ -15,18 +15,16 @@
         android:paddingVertical="12dp"
         android:paddingHorizontal="8dp">
 
-        <TextView
-            android:id="@+id/tv_report"
-            style="@style/Heading"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="8dp"
-            android:text="Report"
-            android:textColor="@color/blue_900"
+
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="10dp"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent" />
+            android:background="@drawable/custom_bg_rounded_8"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/image_scan" />
 
         <TextView
             android:id="@+id/tv_clasify_result"
@@ -42,32 +40,37 @@
             android:textColor="@color/white_50"
             android:textSize="16sp"
             android:textStyle="bold"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent" />
+            card_view:layout_constraintStart_toEndOf="@id/iv_photo"
+            card_view:layout_constraintTop_toTopOf="@id/iv_photo" />
 
         <TextView
             android:id="@+id/tv_username"
             style="@style/TitleText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="4dp"
             android:maxLines="1"
             android:textSize="16sp"
             android:textStyle="bold"
-            card_view:layout_constraintStart_toStartOf="@id/tv_report"
-            card_view:layout_constraintTop_toBottomOf="@id/tv_report"
+            android:ellipsize="end"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@id/iv_photo"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_clasify_result"
             tools:text="Adiwidyantara" />
 
         <TextView
             android:id="@+id/tv_id_report"
-            style="@style/DescriptionText"
+            style="@style/BodyTextInfo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginStart="18dp"
             android:maxLines="1"
-
-            card_view:layout_constraintEnd_toEndOf="@id/tv_clasify_result"
+            android:ellipsize="end"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@id/iv_photo"
             card_view:layout_constraintTop_toBottomOf="@id/tv_username"
             tools:text="12345678" />
 
@@ -77,10 +80,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginStart="18dp"
             android:maxLines="1"
             android:text="May20, 2024"
-            card_view:layout_constraintEnd_toEndOf="@id/tv_clasify_result"
+            card_view:layout_constraintStart_toEndOf="@id/iv_photo"
             card_view:layout_constraintTop_toBottomOf="@id/tv_id_report" />
 
 

@@ -44,5 +44,8 @@
     <color name="white_900">#3d3d3d</color>
     <color name="white_950">#292929</color>
 
+    <color name="red_500">#F44336</color>
+    <color name="red_700">#D32F2F</color>
+
 
 </resources>

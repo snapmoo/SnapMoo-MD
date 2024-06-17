@@ -10,6 +10,8 @@ import com.bangkit.snapmoo.data.api.response.ReportResult
 
 import com.bangkit.snapmoo.databinding.ItemRowReportBinding
 import com.bangkit.snapmoo.ui.report.detail.DetailReportActivity
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
@@ -35,9 +37,11 @@ class  ListReportAdapter : ListAdapter<ReportResult, ListReportAdapter.MyViewHol
     class MyViewHolder(private val binding: ItemRowReportBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(items: ReportResult) {
-//            Glide.with(itemView)
-//                .load(items.photo)
-//                .into(binding.ivPhoto) belum ada ivphoto
+            Glide.with(itemView)
+                .load(items.photo)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
+                .into(binding.ivPhoto)
 
             val readableDate = convertTimestampToReadableDate(
                 items.createdAt?.seconds,
@@ -47,7 +51,7 @@ class  ListReportAdapter : ListAdapter<ReportResult, ListReportAdapter.MyViewHol
             binding.apply {
                 tvUsername.text = items.name
                 tvClasifyResult.text = "${items.prediction.toString()} : ${items.score.toString()}%"
-                tvIdReport.text = items.id
+                tvIdReport.text = "ID: ${items.id}"
                 tvDateReport.text = readableDate
             }
         }
