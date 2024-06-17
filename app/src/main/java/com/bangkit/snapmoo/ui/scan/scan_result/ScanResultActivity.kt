@@ -14,8 +14,8 @@ import com.bangkit.snapmoo.R
 import com.bangkit.snapmoo.data.Result
 import com.bangkit.snapmoo.databinding.ActivityScanResultBinding
 import com.bangkit.snapmoo.ml.Model
-import com.bangkit.snapmoo.ui.scan.send_report.SendReportActivity
 import com.bangkit.snapmoo.ui.MainViewModelFactory
+import com.bangkit.snapmoo.ui.scan.send_report.SendReportActivity
 import com.bangkit.snapmoo.utils.reduceFileImage
 import com.bangkit.snapmoo.utils.uriToBitmap
 import com.bangkit.snapmoo.utils.uriToFile
@@ -33,6 +33,8 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
     private val scanResultViewModel by viewModels<ScanResultViewModel> {
         MainViewModelFactory.getInstance(this)
     }
+    private var idHistory: String = ""
+    private var sendBoolean: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,11 +43,11 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
 
         currentImageUri = Uri.parse(intent.getStringExtra("image_uri"))
         // Reset status upload jika gambar baru di-scan
-        val sharedPref = getSharedPreferences("scan_result", MODE_PRIVATE)
-        with(sharedPref.edit()) {
-            remove(currentImageUri.toString())
-            apply()
-        }
+//        val sharedPref = getSharedPreferences("scan_result", MODE_PRIVATE)
+//        with(sharedPref.edit()) {
+//            remove(currentImageUri.toString())
+//            apply()
+//        }
 
         setToolbar()
         postPrediction()
@@ -103,8 +105,10 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
                 if (roundedNumber > 50) {
                     indication = getString(R.string.positive)
                     binding.tvIndicateScanResult.text = getString(R.string.positive)
-                    binding.tvStepHandling.text = getString(R.string.positive_step_handling).trimIndent()
-                    binding.tvDescription.text = getString(R.string.positive_description).trimIndent()
+                    binding.tvStepHandling.text =
+                        getString(R.string.positive_step_handling).trimIndent()
+                    binding.tvDescription.text =
+                        getString(R.string.positive_description).trimIndent()
                     binding.tvAdditionalDescription.text =
                         getString(R.string.positive_additional_desc).trimIndent()
                     temp = roundedNumber
@@ -112,8 +116,10 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
                 } else {
                     indication = getString(R.string.negative)
                     binding.tvIndicateScanResult.text = getString(R.string.negative)
-                    binding.tvStepHandling.text = getString(R.string.negative_step_handling).trimIndent()
-                    binding.tvDescription.text = getString(R.string.negative_description).trimIndent()
+                    binding.tvStepHandling.text =
+                        getString(R.string.negative_step_handling).trimIndent()
+                    binding.tvDescription.text =
+                        getString(R.string.negative_description).trimIndent()
                     binding.tvAdditionalDescription.text =
                         getString(R.string.negative_additional_desc).trimIndent()
                     temp = 100 - roundedNumber
@@ -122,7 +128,7 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
                 binding.tvScoreScan.text = "${temp}%"
                 binding.ivImageScan.setImageURI(uri)
 
-//                postHistory()
+                postHistory()
 
             } else {
                 Log.e("Error", "Failed to load image from URI")
@@ -134,13 +140,13 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
     private fun postHistory() {
         currentImageUri?.let { uri ->
 
-            val sharedPref = getSharedPreferences("scan_result", MODE_PRIVATE)
-            val alreadyUploaded = sharedPref.getBoolean(uri.toString(), false)
-
-            if (alreadyUploaded) {
-                Log.d("postHistory", "Data already uploaded, skipping upload.")
-                return
-            }
+//            val sharedPref = getSharedPreferences("scan_result", MODE_PRIVATE)
+//            val alreadyUploaded = sharedPref.getBoolean(uri.toString(), false)
+//
+//            if (alreadyUploaded) {
+//                Log.d("postHistory", "Data already uploaded, skipping upload.")
+//                return
+//            }
 
             val imageFile = uriToFile(uri, this).reduceFileImage()
 
@@ -163,10 +169,13 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
                                     showLoading(false)
                                     showToast("upload ke history sukses")
                                     // Simpan status upload ke SharedPreferences
-                                    with(sharedPref.edit()) {
-                                        putBoolean(uri.toString(), true)
-                                        apply()
-                                    }
+//                                    with(sharedPref.edit()) {
+//                                        putBoolean(uri.toString(), true)
+//                                        apply()
+//                                    }
+                                    idHistory = result.data.data.id.toString()
+//                                    isHistorySaved = result.data.data.isSaved
+
                                 }
 
                                 is Result.Error -> {
@@ -191,7 +200,44 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
             }
             startActivity(intent)
         }
+        binding.imageButton.setOnClickListener {
+            addToBookmark()
+        }
     }
+
+    private fun addToBookmark() {
+        scanResultViewModel.getSession().observe(this) { user ->
+            val token = user.token
+            if (token.isNotEmpty()) {
+                scanResultViewModel.addBookmark(token, idHistory, sendBoolean)
+                    .observe(this) { result ->
+                        when (result) {
+                            is Result.Loading -> {
+                            }
+
+                            is Result.Success -> {
+                                val isSaved = result.data.data.isSaved
+                                if (isSaved) {
+                                    showToast("Data berhasil ditambahkan")
+                                    binding.imageButton.setImageResource(R.drawable.icon_bookmark_true)
+                                }
+                                else {
+                                    showToast("Data berhasil dihapus")
+                                    binding.imageButton.setImageResource(R.drawable.icon_bookmark_false)
+                                }
+                                sendBoolean= !sendBoolean
+                            }
+
+                            is Result.Error -> {
+                            }
+
+                        }
+                    }
+
+            }
+        }
+    }
+
 
     private fun showToast(message: String?) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

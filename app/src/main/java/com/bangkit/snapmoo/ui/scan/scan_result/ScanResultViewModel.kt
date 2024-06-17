@@ -16,11 +16,6 @@ class ScanResultViewModel(private val repository: MainRepository) : ViewModel() 
 
     fun postHistory(token: String, indication: String, percentage: Int, image: File) = repository.postHistory(token, indication, percentage, image)
 
-    private val _hasUploaded = MutableLiveData<Boolean>(false)
-    val hasUploaded: LiveData<Boolean> get() = _hasUploaded
-
-    fun setUploadedStatus(status: Boolean) {
-        _hasUploaded.value = status
-    }
+    fun addBookmark(token: String, id: String, isSaved: Boolean) = repository.bookmarkHistory(token, id, isSaved)
 
 }

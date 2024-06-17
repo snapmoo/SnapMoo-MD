@@ -1,6 +1,7 @@
 package com.bangkit.snapmoo.ui.scan.send_report
 
 import android.Manifest
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -10,6 +11,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.bangkit.snapmoo.R
@@ -59,7 +61,20 @@ class SendReportActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setupButtonAction() {
-        binding.btnSend.setOnClickListener { uploadData() }
+        binding.btnSend.setOnClickListener {
+            AlertDialog.Builder(this).apply {
+                setTitle("Create Report")
+                setMessage("Apakah data sudah benar?")
+                setPositiveButton(getString(R.string.yes)) { _: DialogInterface, _: Int ->
+                    uploadData()
+                }
+                setNegativeButton(getString(R.string.no)) { dialogInterface: DialogInterface, _: Int ->
+                    dialogInterface.dismiss()
+                }
+                create()
+                show()
+            }
+        }
         binding.checkboxShareLocation.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 getMyLocation()
@@ -118,7 +133,7 @@ class SendReportActivity : AppCompatActivity(), View.OnClickListener {
             val city = binding.cityEditText.text.toString().trim()
             val province = binding.provinceEditText.text.toString().trim()
             val checkManyHave = binding.haveEditText.text.toString().trim()
-            val condition = binding.conditionEditText.text.toString().trim()
+            var condition = binding.conditionEditText.text.toString().trim()
             val prediction = indication
             val score = percentage
 
@@ -165,7 +180,7 @@ class SendReportActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             if (condition.isEmpty()) {
-                binding.conditionEditText.error = ""
+                condition = ""
             }
 
             sendReportViewModel.getSession().observe(this) { user ->
@@ -197,11 +212,28 @@ class SendReportActivity : AppCompatActivity(), View.OnClickListener {
                                     is Result.Success -> {
                                         showLoading(false)
                                         showToast("upload sukses")
-                                        val intent = Intent(this, MainActivity::class.java)
-                                        intent.flags =
-                                            Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                                        startActivity(intent)
-                                        finish()
+
+                                        AlertDialog.Builder(this@SendReportActivity).apply {
+                                            setTitle("Success")
+                                            setMessage("Laporan berhasil dibuat")
+                                            setPositiveButton("Cek laporan") { dialog, _ ->
+                                                dialog.cancel()
+                                                val intent = Intent(
+                                                    this@SendReportActivity,
+                                                    MainActivity::class.java
+                                                )
+                                                intent.putExtra(
+                                                    "openFragment",
+                                                    "sendReportFragment"
+                                                )
+                                                intent.flags =
+                                                    Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                                                startActivity(intent)
+                                                finish()
+                                            }
+                                            create()
+                                            show()
+                                        }
                                     }
 
                                     is Result.Error -> {
