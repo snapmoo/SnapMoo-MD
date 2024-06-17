@@ -17,7 +17,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/custom_bg_rounded_8"
-            android:backgroundTint="@color/blue_200"
+            android:backgroundTint="@color/blue_100"
             android:paddingVertical="8dp"
             android:paddingHorizontal="4dp"
             app:layout_constraintBottom_toBottomOf="parent"

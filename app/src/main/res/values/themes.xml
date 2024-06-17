@@ -78,20 +78,20 @@
 
     <style name="Heading4">
         <item name="android:textSize">14sp</item>
-        <item name="android:textStyle">normal</item>
+        <item name="android:fontWeight">500</item>
         <item name="android:textColor">@color/white_700</item>
         <item name="fontFamily">@font/poppins_medium</item>
     </style>
 
     <!-- Style untuk Teks Biasa -->
     <style name="BodyTextInfo">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">13sp</item>
         <item name="android:fontWeight">500</item>
         <item name="android:textColor">@color/silver_500</item>
         <item name="fontFamily">@font/poppins_medium</item>
     </style>
     <style name="Text">
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:fontWeight">400</item>
         <item name="android:textColor">@color/silver_400</item>
         <item name="fontFamily">@font/poppins_regular</item>

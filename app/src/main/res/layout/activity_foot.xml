@@ -70,6 +70,7 @@
                     android:gravity="center"
                     android:text="Symptoms of FMD in the Foot"
                     android:textColor="@color/white_950"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/title_case" />
 
@@ -93,7 +94,6 @@
                     android:maxLines="10"
                     android:text="Nail Sores: "
                     android:textColor="@color/white_800"
-
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/guidelineVertical"
                     app:layout_constraintTop_toTopOf="@id/number1" />
