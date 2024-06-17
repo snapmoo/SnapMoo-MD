@@ -21,13 +21,13 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/image_item"
-            android:layout_width="150dp"
+            android:layout_width="130dp"
             android:layout_marginStart="8dp"
             card_view:cardCornerRadius="18dp"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
-            android:layout_height="150dp">
+            android:layout_height="145dp">
             <ImageView
                 android:id="@+id/image_item_scan"
                 android:layout_width="match_parent"
@@ -47,8 +47,9 @@
             style="@style/BodyTextInfo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginTop="10dp"
             android:gravity="end"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@id/image_item"
@@ -57,19 +58,22 @@
 
         <TextView
             android:id="@+id/tv_classify_result"
-            style="@style/Heading"
+            style="@style/TitleText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:maxLines="1"
-            android:textColor="@color/white_950"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
             card_view:layout_constraintEnd_toEndOf="@id/tv_date_history"
+            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="@id/tv_date_history"
             card_view:layout_constraintTop_toBottomOf="@id/tv_date_history"
             tools:text="Scan" />
 
         <TextView
             android:id="@+id/id"
-            style="@style/DescriptionText"
+            style="@style/BodyTextInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -81,7 +85,7 @@
 
         <TextView
             android:id="@+id/tv_id_history"
-            style="@style/DescriptionText"
+            style="@style/BodyTextInfo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -92,33 +96,24 @@
             card_view:layout_constraintTop_toBottomOf="@id/tv_classify_result"
             tools:text="12345678" />
 
-        <TextView
+        <Button
             android:id="@+id/add_to_bookmark"
-            style="@style/Heading2"
-            android:layout_width="0dp"
+            style="@style/CustomButtonPrimary"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
-            android:layout_marginBottom="8dp"
             android:layout_marginEnd="12dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/custom_bg_fill_light_blue"
             android:gravity="center"
             android:maxLines="1"
-            android:paddingVertical="12dp"
-            android:text="Add"
+            android:paddingVertical="4dp"
+            android:text="Bookmark"
             card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintEnd_toStartOf="@+id/imageButton"
+            card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="@+id/id"
-            card_view:layout_constraintTop_toBottomOf="@id/tv_id_history" />
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/custom_bg_outline"
-            android:src="@drawable/icon_bookmark_true"
-            card_view:layout_constraintTop_toTopOf="@id/add_to_bookmark"
-            card_view:layout_constraintBottom_toBottomOf="@id/add_to_bookmark"
-            card_view:layout_constraintEnd_toEndOf="@id/tv_date_history"
-           />
+            card_view:layout_constraintTop_toBottomOf="@id/tv_id_history"
+             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

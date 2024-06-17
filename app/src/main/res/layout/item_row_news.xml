@@ -19,6 +19,7 @@
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:cardCornerRadius="18dp"
             card_view:layout_constraintTop_toTopOf="parent">
+
             <ImageView
                 android:id="@+id/iv_img_news"
                 android:layout_width="140dp"

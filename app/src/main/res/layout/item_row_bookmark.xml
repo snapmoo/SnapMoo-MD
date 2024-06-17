@@ -15,20 +15,19 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:paddingVertical="8dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/custom_bg_rounded_24"
-        android:paddingHorizontal="8dp"
-        android:paddingVertical="8dp">
+        android:background="@drawable/custom_bg_rounded_24">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/image_item"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="12dp"
+            android:layout_width="130dp"
+            android:layout_marginStart="8dp"
+            card_view:cardCornerRadius="18dp"
             card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent">
-
+            android:layout_height="145dp">
             <ImageView
                 android:id="@+id/image_item_scan"
                 android:layout_width="match_parent"
@@ -38,6 +37,7 @@
                 card_view:layout_constraintBottom_toBottomOf="parent"
                 card_view:layout_constraintStart_toStartOf="parent"
                 card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintVertical_bias="0.512"
                 tools:src="@drawable/image_scan" />
         </androidx.cardview.widget.CardView>
 
@@ -47,8 +47,9 @@
             style="@style/BodyTextInfo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginTop="10dp"
             android:gravity="end"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toEndOf="@id/image_item"
@@ -56,32 +57,35 @@
             tools:text="May24, 2024" />
 
         <TextView
-            android:id="@+id/tv_clasify_result"
-            style="@style/Heading"
+            android:id="@+id/tv_classify_result"
+            style="@style/TitleText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:maxLines="1"
-            android:textColor="@color/white_950"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
             card_view:layout_constraintEnd_toEndOf="@id/tv_date_history"
+            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="@id/tv_date_history"
             card_view:layout_constraintTop_toBottomOf="@id/tv_date_history"
             tools:text="Scan" />
 
         <TextView
             android:id="@+id/id"
-            style="@style/DescriptionText"
+            style="@style/BodyTextInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="12dp"
             android:maxLines="1"
             android:text="ID : "
-            card_view:layout_constraintStart_toStartOf="@id/tv_clasify_result"
-            card_view:layout_constraintTop_toBottomOf="@id/tv_clasify_result" />
+            card_view:layout_constraintStart_toStartOf="@id/tv_classify_result"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_classify_result" />
 
         <TextView
             android:id="@+id/tv_id_history"
-            style="@style/DescriptionText"
+            style="@style/BodyTextInfo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -89,39 +93,26 @@
             android:maxLines="1"
             card_view:layout_constraintEnd_toEndOf="@id/tv_date_history"
             card_view:layout_constraintStart_toEndOf="@id/id"
-            card_view:layout_constraintTop_toBottomOf="@id/tv_clasify_result"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_classify_result"
             tools:text="12345678" />
 
-        <TextView
+        <Button
             android:id="@+id/tv_delete_bookmark"
-            style="@style/Heading3"
-            android:layout_width="0dp"
+            style="@style/CustomButtonPrimary"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:layout_marginEnd="12dp"
-            android:background="@drawable/custom_bg_rounded_8"
-            android:backgroundTint="@color/blue_600"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/custom_bg_fill_light_red"
             android:gravity="center"
             android:maxLines="1"
-            android:paddingVertical="12dp"
+            android:paddingVertical="4dp"
             android:text="Remove"
             card_view:layout_constraintBottom_toBottomOf="parent"
-            card_view:layout_constraintEnd_toStartOf="@+id/btn_delete"
+            card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="@+id/id"
             card_view:layout_constraintTop_toBottomOf="@id/tv_id_history" />
-
-        <ImageButton
-            android:id="@+id/btn_delete"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/custom_bg_rounded_8"
-            android:backgroundTint="@color/blue_100"
-            android:src="@drawable/icon_delete"
-
-            card_view:layout_constraintBottom_toBottomOf="@id/tv_delete_bookmark"
-            card_view:layout_constraintEnd_toEndOf="@id/tv_date_history"
-            card_view:layout_constraintTop_toTopOf="@id/tv_delete_bookmark" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

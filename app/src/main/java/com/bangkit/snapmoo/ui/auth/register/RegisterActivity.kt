@@ -73,6 +73,10 @@ class RegisterActivity : AppCompatActivity() {
             binding.passwordEditText.error = getString(R.string.password_cannot_be_empty)
             return
         }
+        if (password.length < 6) {
+            binding.passwordEditText.error = "Password must contain at least 6 characters"
+            return
+        }
         if (phoneNumber.isEmpty()) {
             binding.passwordEditText.error = getString(R.string.phonenumber_cannot_be_empty)
             return
@@ -86,6 +90,7 @@ class RegisterActivity : AppCompatActivity() {
 
                     is Result.Success -> {
                         showLoading(false)
+                        showToast("Register berhasil")
                         val intent = Intent(this, LoginActivity::class.java)
                         intent.flags =
                             Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK

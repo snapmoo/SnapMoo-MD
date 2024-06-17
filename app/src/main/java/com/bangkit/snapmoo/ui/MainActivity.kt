@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         if (intent != null) {
             val openFragment = intent.getStringExtra("openFragment")
             if (openFragment == "profileFragment") {
+
                 val item = bottomNavView.menu.findItem(R.id.navigation_profile)
                 NavigationUI.onNavDestinationSelected(item, bottomNavController)
             }
