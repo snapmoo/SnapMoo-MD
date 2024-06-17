@@ -1,19 +1,21 @@
 package com.bangkit.snapmoo.ui.profile.history
 
+import android.content.DialogInterface
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.snapmoo.R
 import com.bangkit.snapmoo.data.Result
 import com.bangkit.snapmoo.databinding.ActivityHistoryBinding
-import com.bangkit.snapmoo.ui.adapter.ListHistoryAdapter
 import com.bangkit.snapmoo.ui.MainViewModelFactory
+import com.bangkit.snapmoo.ui.adapter.ListHistoryAdapter
 
-class HistoryActivity : AppCompatActivity(),View.OnClickListener {
+class HistoryActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityHistoryBinding
     private val historyViewModel by viewModels<HistoryViewModel> {
         MainViewModelFactory.getInstance(this)
@@ -48,22 +50,18 @@ class HistoryActivity : AppCompatActivity(),View.OnClickListener {
 
                             adapter.onClick = {
                                 val checkIsSaved = !(it.isSaved)
-                                historyViewModel.addBookmark(token, it.historyId, checkIsSaved)
-                                    .observe(this) { result ->
-                                        when (result) {
-                                            is Result.Loading -> {
-                                            }
-
-                                            is Result.Success -> {
-                                                showToast("Data berhasil ditambahkan")
-                                                setupAction()
-                                            }
-
-                                            is Result.Error -> {
-                                            }
-
-                                        }
+                                AlertDialog.Builder(this@HistoryActivity).apply {
+                                    setTitle("Bookmark history")
+                                    setMessage("Are you sure you want to bookmark this history?")
+                                    setPositiveButton(getString(R.string.yes)) { _: DialogInterface, _: Int ->
+                                        saveToBookmark(token, it.historyId, checkIsSaved)
                                     }
+                                    setNegativeButton(getString(R.string.no)) { dialogInterface: DialogInterface, _: Int ->
+                                        dialogInterface.dismiss()
+                                    }
+                                    create()
+                                    show()
+                                }
                             }
                         }
 
@@ -77,6 +75,25 @@ class HistoryActivity : AppCompatActivity(),View.OnClickListener {
         }
     }
 
+    private fun saveToBookmark(token: String, historyId: String, isSaved: Boolean) {
+        historyViewModel.addBookmark(token, historyId, isSaved)
+            .observe(this) { result ->
+                when (result) {
+                    is Result.Loading -> {
+                    }
+
+                    is Result.Success -> {
+                        showToast("Data berhasil ditambahkan")
+                        setupAction()
+                    }
+
+                    is Result.Error -> {
+                    }
+
+                }
+            }
+    }
+
     private fun showToast(message: String?) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
@@ -85,6 +102,7 @@ class HistoryActivity : AppCompatActivity(),View.OnClickListener {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
         binding.rvListHistory.visibility = if (isLoading) View.GONE else View.VISIBLE
     }
+
     private fun setToolbar() {
         binding.toolbar.btnBackToolbar.setOnClickListener {
             onBackPressed()

@@ -10,6 +10,7 @@ import com.bangkit.snapmoo.data.api.response.NewsResult
 import com.bangkit.snapmoo.databinding.ItemRowNewsBinding
 import com.bangkit.snapmoo.ui.news.detail_news.DetailNewsActivity
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
@@ -35,9 +36,13 @@ class ListNewsAdapter : ListAdapter<NewsResult, ListNewsAdapter.MyViewHolder>(DI
         fun bind(items: NewsResult) {
             Glide.with(itemView)
                 .load(items.thumbnail)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
                 .into(binding.ivImgNews)
             Glide.with(itemView)
                 .load(items.authorImage)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
                 .into(binding.ivAuthorLogo)
 
             val readableDate = convertTimestampToReadableDate(

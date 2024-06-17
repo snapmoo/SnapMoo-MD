@@ -10,6 +10,7 @@ import com.bangkit.snapmoo.data.api.response.HistoryResult
 import com.bangkit.snapmoo.databinding.ItemRowBookmarkBinding
 import com.bangkit.snapmoo.databinding.ItemRowHistoryBinding
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
@@ -28,11 +29,6 @@ class ListBookmarkAdapter : ListAdapter<HistoryResult, ListBookmarkAdapter.MyVie
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val news = getItem(position)
         holder.bind(news, onClick)
-//        holder.itemView.setOnClickListener {
-//            val intentDetail = Intent(holder.itemView.context, DetailNewsActivity::class.java)
-//            intentDetail.putExtra("extra_link", news.link)
-//            holder.itemView.context.startActivity(intentDetail)
-//        }
     }
 
     class MyViewHolder(private val binding: ItemRowBookmarkBinding) :
@@ -40,6 +36,8 @@ class ListBookmarkAdapter : ListAdapter<HistoryResult, ListBookmarkAdapter.MyVie
         fun bind(items: HistoryResult, onClick: ((HistoryResult) -> Unit)?) {
             Glide.with(itemView)
                 .load(items.photo)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
                 .into(binding.imageItemScan)
 
             val readableDate = convertTimestampToReadableDate(

@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bangkit.snapmoo.R
@@ -43,6 +44,20 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(bottomNavController, appBarConfiguration)
         bottomNavView.setupWithNavController(bottomNavController)
+
+        if (intent != null) {
+            val openFragment = intent.getStringExtra("openFragment")
+            if (openFragment == "profileFragment") {
+                val item = bottomNavView.menu.findItem(R.id.navigation_profile)
+                NavigationUI.onNavDestinationSelected(item, bottomNavController)
+            }
+            else if (openFragment == "sendReportFragment") {
+                val item = bottomNavView.menu.findItem(R.id.navigation_report)
+                NavigationUI.onNavDestinationSelected(item, bottomNavController)
+            }
+            intent = null
+        }
+
         binding.fab.setOnClickListener {
             startCameraX()
         }

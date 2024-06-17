@@ -233,7 +233,7 @@
             android:layout_height="50dp"
             android:layout_margin="12dp"
             android:background="@drawable/custom_bg_outline"
-            android:src="@drawable/icon_bookmark_true"
+            android:src="@drawable/icon_bookmark_false"
             app:layout_constraintBottom_toBottomOf="@+id/btn_request"
             app:layout_constraintEnd_toStartOf="@id/guidelineVertical"
             app:layout_constraintStart_toStartOf="parent"

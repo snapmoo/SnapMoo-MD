@@ -1,10 +1,12 @@
 package com.bangkit.snapmoo.ui.profile.bookmark
 
+import android.content.DialogInterface
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.snapmoo.R
@@ -49,22 +51,18 @@ class BookmarkActivity : AppCompatActivity(), View.OnClickListener {
 
                             adapter.onClick = {
                                 val checkIsSaved = !(it.isSaved)
-                                bookmarkViewModel.deleteBookmark(token, it.historyId, checkIsSaved)
-                                    .observe(this) { result ->
-                                        when (result) {
-                                            is Result.Loading -> {
-                                            }
-
-                                            is Result.Success -> {
-                                                showToast("Data berhasil dihapus")
-                                                setupAction()
-                                            }
-
-                                            is Result.Error -> {
-                                            }
-
-                                        }
+                                AlertDialog.Builder(this@BookmarkActivity).apply {
+                                    setTitle("Bookmark history")
+                                    setMessage("Are you sure you want to remove bookmark for this history?")
+                                    setPositiveButton(getString(R.string.yes)) { _: DialogInterface, _: Int ->
+                                        deleteFromBookmark(token, it.historyId, checkIsSaved)
                                     }
+                                    setNegativeButton(getString(R.string.no)) { dialogInterface: DialogInterface, _: Int ->
+                                        dialogInterface.dismiss()
+                                    }
+                                    create()
+                                    show()
+                                }
                             }
                         }
 
@@ -77,6 +75,26 @@ class BookmarkActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+
+    private fun deleteFromBookmark(token: String, historyId: String, isSaved: Boolean) {
+        bookmarkViewModel.deleteBookmark(token, historyId, isSaved)
+            .observe(this) { result ->
+                when (result) {
+                    is Result.Loading -> {
+                    }
+
+                    is Result.Success -> {
+                        showToast("Data berhasil dihapus")
+                        setupAction()
+                    }
+
+                    is Result.Error -> {
+                    }
+
+                }
+            }
+    }
+
 
     private fun showToast(message: String?) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

@@ -13,16 +13,23 @@ data class PredictionResponse(
 
 data class PredictionResult(
 
+
+    @field:SerializedName("id")
+    val id: String? = null,
+
     @field:SerializedName("result")
     val result: String? = null,
 
     @field:SerializedName("score")
     val score: Int? = null,
 
-    @field:SerializedName("prediction_id")
-    val predictionId: String? = null,
+    @field:SerializedName("user_id")
+    val userId: String? = null,
 
     @field:SerializedName("created_at")
-    val createdAt: String? = null
+    val createdAt: String? = null,
+
+    @field:SerializedName("is_saved")
+    val isSaved: Boolean
 
 )
