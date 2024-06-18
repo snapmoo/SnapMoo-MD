@@ -79,7 +79,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="12dp"
             android:maxLines="1"
-            android:text="ID : "
+            android:text="@string/id_2"
             card_view:layout_constraintStart_toStartOf="@id/tv_classify_result"
             card_view:layout_constraintTop_toBottomOf="@id/tv_classify_result" />
 
@@ -108,7 +108,7 @@
             android:gravity="center"
             android:maxLines="1"
             android:paddingVertical="4dp"
-            android:text="Bookmark"
+            android:text="@string/bookmark"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="@+id/id"

@@ -38,7 +38,7 @@
         android:layout_marginTop="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SnapMoo"
+        android:text="@string/snapmoo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +50,7 @@
         android:gravity="center"
         android:layout_height="wrap_content"
         android:paddingHorizontal="24dp"
-        android:text="Your FMD Detection Partner"
+        android:text="@string/your_fmd_detection_partner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_appName1" />
@@ -74,7 +74,7 @@
         android:gravity="center"
         android:layout_marginBottom="34dp"
         android:paddingHorizontal="24dp"
-        android:text="Your Partner in Ensuring a Healthy and Happy Cattle Herd"
+        android:text="@string/your_partner_in_ensuring_a_healthy_and_happy_cattle_herd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 app:layout_constraintBottom_toTopOf="@id/btn_getting_started"/>
@@ -85,7 +85,7 @@ app:layout_constraintBottom_toTopOf="@id/btn_getting_started"/>
         android:layout_height="wrap_content"
         android:background="@color/blue_500"
         android:src="@drawable/button_getting_started"
-        android:text="getting started"
+        android:text="@string/getting_started"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/content2"
         android:layout_marginBottom="40dp"

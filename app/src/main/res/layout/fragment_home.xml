@@ -36,7 +36,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Hello,"
+                        android:text="@string/hello"
                         android:textColor="@color/blue_600"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -99,7 +99,7 @@
 
                         android:layout_marginTop="12dp"
 
-                        android:text="FMD Danger: Ready to Survive!"
+                        android:text="@string/fmd_danger_ready_to_survive"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -111,7 +111,7 @@
 
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="20dp"
-                        android:text="Too many farmers are surprised and realize too late how deadly FMD can be"
+                        android:text="@string/too_many_farmers_are_surprised_and_realize_too_late_how_deadly_fmd_can_be"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@id/tv_title_content1"
                         app:layout_constraintTop_toBottomOf="@id/tv_title_content1" />
@@ -150,7 +150,7 @@
 
                         android:layout_marginStart="24dp"
                         android:layout_marginTop="18dp"
-                        android:text="Protect from FMD"
+                        android:text="@string/protect_from_fmd"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -161,7 +161,7 @@
                         android:layout_height="wrap_content"
 
                         android:layout_marginBottom="20dp"
-                        android:text="Check Your Cattle Now"
+                        android:text="@string/check_your_cattle_now"
                         android:textColor="@color/silver_200"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@id/tv_title_shortcutScan"
@@ -195,7 +195,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginTop="26dp"
-                    android:text="FMD Symptoms: Focus on Body Parts"
+                    android:text="@string/fmd_symptoms_focus_on_body_parts"
                     android:textColor="@color/blue_500"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -240,7 +240,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="Foot"
+                            android:text="@string/foot"
                             android:textColor="@color/blue_500"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -276,7 +276,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="Mouth"
+                            android:text="@string/mouth"
                             android:textColor="@color/blue_500"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -336,7 +336,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:text="Udder"
+                            android:text="@string/udder"
                             android:textColor="@color/blue_500"
                             android:textSize="14sp" />
                     </LinearLayout>

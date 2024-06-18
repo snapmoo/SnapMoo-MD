@@ -50,7 +50,6 @@ class ProfileFragment : Fragment() {
                         }
 
                         is Result.Success -> {
-                            showLoading(false)
                             val data = result.data.data
                             if (data.photo != null) {
                                 Glide.with(requireActivity())
@@ -66,7 +65,6 @@ class ProfileFragment : Fragment() {
                         }
 
                         is Result.Error -> {
-                            showLoading(false)
                             showToast(result.error)
                         }
                     }
@@ -106,10 +104,5 @@ class ProfileFragment : Fragment() {
     private fun showToast(message: String?) {
         Toast.makeText(requireActivity(), message, Toast.LENGTH_SHORT).show()
     }
-
-    private fun showLoading(isLoading: Boolean) {
-//        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
-    }
-
 
 }

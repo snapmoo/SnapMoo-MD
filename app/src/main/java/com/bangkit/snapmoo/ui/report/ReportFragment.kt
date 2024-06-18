@@ -51,11 +51,16 @@ class ReportFragment : Fragment() {
                         is Result.Success -> {
                             showLoading(false)
                             val data = result.data.data
-                            val layoutManager = LinearLayoutManager(activity)
-                            binding.rvListReport.layoutManager = layoutManager
-                            val adapter = ListReportAdapter()
-                            adapter.submitList(data)
-                            binding.rvListReport.adapter = adapter
+                            if (data.isEmpty()) {
+                                binding.noDataFound.visibility = View.VISIBLE
+                                binding.rvListReport.visibility = View.GONE
+                            } else {
+                                val layoutManager = LinearLayoutManager(activity)
+                                binding.rvListReport.layoutManager = layoutManager
+                                val adapter = ListReportAdapter()
+                                adapter.submitList(data)
+                                binding.rvListReport.adapter = adapter
+                            }
                         }
 
                         is Result.Error -> {
@@ -74,6 +79,7 @@ class ReportFragment : Fragment() {
 
     private fun showLoading(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
-        binding.rvListReport.visibility = if (isLoading) View.GONE else View.VISIBLE
+//        binding.rvListReport.visibility = if (isLoading) View.GONE else View.VISIBLE
+//        binding.noDataFound.visibility = View.GONE
     }
 }

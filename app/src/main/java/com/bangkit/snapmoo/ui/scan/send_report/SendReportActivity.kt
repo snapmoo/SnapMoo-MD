@@ -63,8 +63,8 @@ class SendReportActivity : AppCompatActivity(), View.OnClickListener {
     private fun setupButtonAction() {
         binding.btnSend.setOnClickListener {
             AlertDialog.Builder(this).apply {
-                setTitle("Create Report")
-                setMessage("Apakah data sudah benar?")
+                setTitle(getString(R.string.create_report))
+                setMessage(getString(R.string.is_the_data_you_want_to_create_correct))
                 setPositiveButton(getString(R.string.yes)) { _: DialogInterface, _: Int ->
                     uploadData()
                 }
@@ -211,12 +211,10 @@ class SendReportActivity : AppCompatActivity(), View.OnClickListener {
 
                                     is Result.Success -> {
                                         showLoading(false)
-                                        showToast("upload sukses")
-
                                         AlertDialog.Builder(this@SendReportActivity).apply {
-                                            setTitle("Success")
-                                            setMessage("Laporan berhasil dibuat")
-                                            setPositiveButton("Cek laporan") { dialog, _ ->
+                                            setTitle(getString(R.string.success))
+                                            setMessage(getString(R.string.report_saved_successfully))
+                                            setPositiveButton(getString(R.string.check_report)) { dialog, _ ->
                                                 dialog.cancel()
                                                 val intent = Intent(
                                                     this@SendReportActivity,

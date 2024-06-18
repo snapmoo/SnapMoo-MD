@@ -162,7 +162,7 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
 
                             is Result.Success -> {
                                 showLoading(false)
-                                showToast("edit data sukses")
+                                showToast(getString(R.string.edit_profile_data_success))
                                 val intent = Intent(this, MainActivity::class.java)
                                 intent.putExtra("openFragment", "profileFragment")
                                 intent.flags =
@@ -174,7 +174,6 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
 
                             is Result.Error -> {
                                 showLoading(false)
-                                showToast("edit data gagal")
                                 showToast(result.error)
                             }
                         }

@@ -11,12 +11,11 @@ import com.bangkit.snapmoo.ui.home.HomeViewModel
 import com.bangkit.snapmoo.ui.news.NewsViewModel
 import com.bangkit.snapmoo.ui.profile.ProfileViewModel
 import com.bangkit.snapmoo.ui.profile.bookmark.BookmarkViewModel
-import com.bangkit.snapmoo.ui.profile.edit_password.EditPasswordViewModel
 import com.bangkit.snapmoo.ui.profile.edit_profile.EditProfileViewModel
 import com.bangkit.snapmoo.ui.profile.history.HistoryViewModel
 import com.bangkit.snapmoo.ui.profile.setting.SettingViewModel
-import com.bangkit.snapmoo.ui.report.detail.DetailReportViewModel
 import com.bangkit.snapmoo.ui.report.ReportViewModel
+import com.bangkit.snapmoo.ui.report.detail.DetailReportViewModel
 import com.bangkit.snapmoo.ui.scan.scan_result.ScanResultViewModel
 import com.bangkit.snapmoo.ui.scan.send_report.SendReportViewModel
 import com.bangkit.snapmoo.ui.splash_screen.SplashScreenViewModel
@@ -41,10 +40,6 @@ class MainViewModelFactory(private val repository: MainRepository) :
 
             modelClass.isAssignableFrom(EditProfileViewModel::class.java) -> {
                 EditProfileViewModel(repository) as T
-            }
-
-            modelClass.isAssignableFrom(EditPasswordViewModel::class.java) -> {
-                EditPasswordViewModel(repository) as T
             }
 
             modelClass.isAssignableFrom(NewsViewModel::class.java) -> {
