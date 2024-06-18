@@ -162,4 +162,5 @@
     <string name="success">Berhasil</string>
     <string name="report_saved_successfully">Laporan berhasil disimpan</string>
     <string name="check_report">Periksa laporan Anda</string>
+    <string name="current_image_uri_is_null">URI Gambar saat ini kosong!</string>
 </resources>

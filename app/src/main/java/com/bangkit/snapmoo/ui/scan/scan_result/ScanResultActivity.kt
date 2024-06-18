@@ -42,12 +42,6 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
         currentImageUri = Uri.parse(intent.getStringExtra("image_uri"))
-        // Reset status upload jika gambar baru di-scan
-//        val sharedPref = getSharedPreferences("scan_result", MODE_PRIVATE)
-//        with(sharedPref.edit()) {
-//            remove(currentImageUri.toString())
-//            apply()
-//        }
 
         setToolbar()
         postPrediction()
@@ -141,14 +135,6 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
     private fun postHistory() {
         currentImageUri?.let { uri ->
 
-//            val sharedPref = getSharedPreferences("scan_result", MODE_PRIVATE)
-//            val alreadyUploaded = sharedPref.getBoolean(uri.toString(), false)
-//
-//            if (alreadyUploaded) {
-//                Log.d("postHistory", "Data already uploaded, skipping upload.")
-//                return
-//            }
-
             val imageFile = uriToFile(uri, this).reduceFileImage()
 
             scanResultViewModel.getSession().observe(this) { user ->
@@ -182,7 +168,7 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
                     }
                 }
             }
-        } ?: showToast("error")
+        } ?: showToast(getString(R.string.current_image_uri_is_null))
     }
 
     private fun setButtonAction() {
@@ -193,6 +179,7 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
                 putExtra("percentage", percentage)
             }
             startActivity(intent)
+            finish()
         }
         binding.imageButton.setOnClickListener {
             addToBookmark()

@@ -25,15 +25,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:layout_marginBottom="40dp"
-                android:background="@color/blue_100">
+>
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/view_pager"
                     android:layout_width="match_parent"
                     android:layout_height="260dp"
                     android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/custom_bg_rounded_8"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:backgroundTint="@color/white_50"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="-59dp" />
 
                 <LinearLayout
                     android:id="@+id/indicator"

@@ -164,5 +164,6 @@
     <string name="report_saved_successfully">Report saved successfully</string>
     <string name="check_report">Check your report</string>
     <string name="no_data_found">No data found!</string>
+    <string name="current_image_uri_is_null">Current Image URI is null</string>
 
 </resources>
