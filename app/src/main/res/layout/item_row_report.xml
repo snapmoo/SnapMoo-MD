@@ -41,6 +41,8 @@
             android:gravity="center"
             android:paddingHorizontal="24dp"
             android:paddingVertical="24dp"
+            tools:text="Positive: 75%"
+
             android:textColor="@color/white_50"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -92,6 +94,8 @@
             card_view:layout_constraintStart_toEndOf="@id/cv_photo"
             card_view:layout_constraintTop_toBottomOf="@id/tv_id_report"
             tools:text="May 20,2024" />
+
+            
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
