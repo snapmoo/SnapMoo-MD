@@ -10,14 +10,18 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_margin="8dp"
-            android:id="@+id/rv_list_history"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/toolbar"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:paddingBottom="50dp"
+        android:layout_marginBottom="90dp"
+        android:paddingTop="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <TextView
         android:id="@+id/no_data_found"
@@ -27,14 +31,13 @@
         android:text="@string/no_data_found"
         android:textSize="16sp"
         android:visibility="gone"
-        tools:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintVertical_bias="0.5"
-        />
+        tools:visibility="visible" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/progressBar"

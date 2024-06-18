@@ -41,11 +41,6 @@ class FootActivity : AppCompatActivity(), View.OnClickListener {
         )
         list.add(
             ImageData(
-                R.drawable.foot_2
-            )
-        )
-        list.add(
-            ImageData(
                 R.drawable.foot_3
             )
         )

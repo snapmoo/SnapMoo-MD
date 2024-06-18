@@ -24,14 +24,14 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_marginBottom="40dp"
-                android:background="@color/blue_100">
+                android:layout_marginBottom="40dp">
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/view_pager"
                     android:layout_width="match_parent"
                     android:layout_height="260dp"
                     android:layout_margin="8dp"
+                    android:backgroundTint="@color/white_50"
                     android:background="@drawable/custom_bg_rounded_8"
                     app:layout_constraintTop_toTopOf="parent" />
 
