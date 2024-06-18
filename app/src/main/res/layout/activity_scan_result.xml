@@ -32,7 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:text="Scan by Snapmoo"
+                    android:text="@string/scan_by_snapmoo"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -93,7 +93,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="6dp"
-                            android:text="FMD Indication"
+                            android:text="@string/fmd_indication"
                             android:textColor="@color/silver_700"
                             app:layout_constraintStart_toStartOf="@id/tv_indicateScanResult"
                             app:layout_constraintTop_toBottomOf="@id/tv_indicateScanResult" />
@@ -124,7 +124,7 @@
                     style="@style/Heading4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Description"
+                    android:text="@string/description"
                     android:textColor="@color/silver_700"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -145,7 +145,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="Steps for Handling Cattle Positive for FMD"
+                    android:text="@string/steps_for_handling_cattle_positive_for_fmd"
                     android:textColor="@color/blue_900"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -225,7 +225,7 @@
             android:layout_height="50dp"
             android:layout_marginStart="12dp"
             android:layout_marginEnd="24dp"
-            android:text="Create Report"
+            android:text="@string/create_report"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageButton"

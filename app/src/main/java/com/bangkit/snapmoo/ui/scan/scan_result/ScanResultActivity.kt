@@ -118,6 +118,7 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
                     binding.tvIndicateScanResult.text = getString(R.string.negative)
                     binding.tvStepHandling.text =
                         getString(R.string.negative_step_handling).trimIndent()
+
                     binding.tvDescription.text =
                         getString(R.string.negative_description).trimIndent()
                     binding.tvAdditionalDescription.text =
@@ -167,12 +168,6 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
 
                                 is Result.Success -> {
                                     showLoading(false)
-                                    showToast("upload ke history sukses")
-                                    // Simpan status upload ke SharedPreferences
-//                                    with(sharedPref.edit()) {
-//                                        putBoolean(uri.toString(), true)
-//                                        apply()
-//                                    }
                                     idHistory = result.data.data.id.toString()
 //                                    isHistorySaved = result.data.data.isSaved
 
@@ -180,7 +175,6 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
 
                                 is Result.Error -> {
                                     showLoading(false)
-                                    showToast("upload ke history gagal")
                                     showToast(result.error)
                                 }
                             }
@@ -218,11 +212,11 @@ class ScanResultActivity : AppCompatActivity(), View.OnClickListener {
                             is Result.Success -> {
                                 val isSaved = result.data.data.isSaved
                                 if (isSaved) {
-                                    showToast("Data berhasil ditambahkan")
+                                    showToast(getString(R.string.data_successfully_bookmarked))
                                     binding.imageButton.setImageResource(R.drawable.icon_bookmark_true)
                                 }
                                 else {
-                                    showToast("Data berhasil dihapus")
+                                    showToast(getString(R.string.data_successfully_removed))
                                     binding.imageButton.setImageResource(R.drawable.icon_bookmark_false)
                                 }
                                 sendBoolean= !sendBoolean

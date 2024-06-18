@@ -18,9 +18,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/app_logo"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/app_logo_rounded"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.SnapMoo"
         tools:targetApi="31">
@@ -28,10 +28,7 @@
             android:name=".ui.report.detail.DetailReportActivity"
             android:label="Detail Report"
             android:exported="false" />
-        <activity
-            android:name=".ui.profile.edit_password.EditPasswordActivity"
-            android:exported="false"
-            android:label="Edit Password" />
+
         <activity
             android:name=".ui.profile.edit_profile.EditProfileActivity"
             android:exported="false"

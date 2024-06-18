@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="40dp"
-            android:text="Snap"
+            android:text="@string/snap"
             android:textColor="@color/blue_400"
             app:layout_constraintStart_toEndOf="@+id/tv_title"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="0dp"
-            android:text="Moo"
+            android:text="@string/moo"
             android:textColor="@color/blue_900"
             app:layout_constraintStart_toEndOf="@+id/tv_appName1"
             app:layout_constraintTop_toTopOf="@id/tv_appName1" />
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:padding="4dp"
-            android:text="Join to "
+            android:text="@string/join_to"
             android:textColor="@color/white_950"
             app:layout_constraintBottom_toBottomOf="@id/tv_appName1"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="12dp"
-            android:text="Start Protecting Your Cattle Today "
+            android:text="@string/start_protecting_your_cattle_today"
             app:layout_constraintStart_toStartOf="@id/tv_title"
             app:layout_constraintTop_toBottomOf="@id/tv_appName2" />
 
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="40dp"
-            android:text="Name"
+            android:text="@string/name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_description" />
 
@@ -101,7 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
-            android:text="Phone Number"
+            android:text="@string/phone_number"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nameInputLayout" />
@@ -132,7 +132,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
-            android:text="Email"
+            android:text="@string/email"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/phoneNumberInputLayout" />
@@ -163,7 +163,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
-            android:text="Password"
+            android:text="@string/password"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/emailInputLayout" />
@@ -194,7 +194,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="4dp"
-            android:text="Already have an Account ?"
+            android:text="@string/already_have_an_account"
             app:layout_constraintEnd_toStartOf="@id/tv_auth_condition_login"
             app:layout_constraintTop_toTopOf="@+id/tv_auth_condition_login" />
 
@@ -205,7 +205,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="12dp"
-            android:text="Login"
+            android:text="@string/login"
             android:textColor="@color/blue_500"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/passwordInputLayout"
@@ -219,7 +219,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="60dp"
             android:layout_marginBottom="50dp"
-            android:text="Register"
+            android:text="@string/register"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

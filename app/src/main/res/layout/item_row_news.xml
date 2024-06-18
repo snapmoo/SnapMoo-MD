@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
+
+    card_view:cardCornerRadius="8dp"
     android:layout_marginVertical="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,6 +17,7 @@
             android:id="@+id/img_news"
             android:layout_width="140dp"
             android:layout_height="140dp"
+            android:layout_margin="4dp"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:cardCornerRadius="18dp"
@@ -22,8 +25,8 @@
 
             <ImageView
                 android:id="@+id/iv_img_news"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@drawable/custom_bg_rounded_8"
                 android:scaleType="centerCrop"
                 card_view:layout_constraintBottom_toBottomOf="parent"
@@ -51,6 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:maxLines="3"
+            android:layout_marginEnd="12dp"
             android:textColor="@color/white_950"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintStart_toStartOf="@id/tv_publishAt"
@@ -73,8 +77,6 @@
                 tools:src="@drawable/image_scan"
                 android:layout_gravity="start"
                 android:scaleType="centerCrop" />
-
-
 
 
         </LinearLayout>
