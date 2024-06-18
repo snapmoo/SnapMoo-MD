@@ -103,8 +103,12 @@ class NewsFragment : Fragment() {
                 is Result.Success -> {
                     showLoading(false)
                     val data = result.data.data
+                    if (data.isEmpty()) {
+                        binding.noDataFound.visibility = View.VISIBLE
+                    }
                     val layoutManager = LinearLayoutManager(activity)
                     binding.rvNews.layoutManager = layoutManager
+
                     val adapter = ListNewsAdapter()
                     adapter.submitList(data)
                     binding.rvNews.adapter = adapter
