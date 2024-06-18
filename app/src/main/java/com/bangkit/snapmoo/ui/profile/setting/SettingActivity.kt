@@ -81,11 +81,11 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener {
     private fun clearAppCache() {
         try {
             AlertDialog.Builder(this).apply {
-                setTitle("Clear cache")
-                setMessage("Are you sure want to delete application cache?")
+                setTitle(getString(R.string.clear_cache))
+                setMessage(getString(R.string.are_you_sure_want_to_delete_application_cache))
                 setPositiveButton(getString(R.string.yes)) { _: DialogInterface, _: Int ->
                     cacheDir.deleteRecursively()
-                    showToast("Clear cache success")
+                    showToast(getString(R.string.clear_cache_success))
                 }
                 setNegativeButton(getString(R.string.no)) { dialogInterface: DialogInterface, _: Int ->
                     dialogInterface.dismiss()

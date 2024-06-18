@@ -42,25 +42,30 @@ class HistoryActivity : AppCompatActivity(), View.OnClickListener {
                         is Result.Success -> {
                             showLoading(false)
                             val data = result.data.data
-                            val layoutManager = LinearLayoutManager(this)
-                            binding.rvListHistory.layoutManager = layoutManager
-                            val adapter = ListHistoryAdapter()
-                            adapter.submitList(data)
-                            binding.rvListHistory.adapter = adapter
+                            if (data.isEmpty()) {
+                                binding.noDataFound.visibility = View.VISIBLE
+                                binding.rvListHistory.visibility = View.GONE
+                            } else {
+                                val layoutManager = LinearLayoutManager(this)
+                                binding.rvListHistory.layoutManager = layoutManager
+                                val adapter = ListHistoryAdapter()
+                                adapter.submitList(data)
+                                binding.rvListHistory.adapter = adapter
 
-                            adapter.onClick = {
-                                val checkIsSaved = !(it.isSaved)
-                                AlertDialog.Builder(this@HistoryActivity).apply {
-                                    setTitle("Bookmark history")
-                                    setMessage("Are you sure you want to bookmark this history?")
-                                    setPositiveButton(getString(R.string.yes)) { _: DialogInterface, _: Int ->
-                                        saveToBookmark(token, it.historyId, checkIsSaved)
+                                adapter.onClick = {
+                                    val checkIsSaved = !(it.isSaved)
+                                    AlertDialog.Builder(this@HistoryActivity).apply {
+                                        setTitle(getString(R.string.bookmark_history))
+                                        setMessage(getString(R.string.are_you_sure_you_want_to_bookmark_this_history))
+                                        setPositiveButton(getString(R.string.yes)) { _: DialogInterface, _: Int ->
+                                            saveToBookmark(token, it.historyId, checkIsSaved)
+                                        }
+                                        setNegativeButton(getString(R.string.no)) { dialogInterface: DialogInterface, _: Int ->
+                                            dialogInterface.dismiss()
+                                        }
+                                        create()
+                                        show()
                                     }
-                                    setNegativeButton(getString(R.string.no)) { dialogInterface: DialogInterface, _: Int ->
-                                        dialogInterface.dismiss()
-                                    }
-                                    create()
-                                    show()
                                 }
                             }
                         }
@@ -83,11 +88,12 @@ class HistoryActivity : AppCompatActivity(), View.OnClickListener {
                     }
 
                     is Result.Success -> {
-                        showToast("Data berhasil ditambahkan")
+                        showToast(getString(R.string.data_successfully_bookmarked))
                         setupAction()
                     }
 
                     is Result.Error -> {
+                        showToast(result.error)
                     }
 
                 }
@@ -100,7 +106,7 @@ class HistoryActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun showLoading(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
-        binding.rvListHistory.visibility = if (isLoading) View.GONE else View.VISIBLE
+//        binding.rvListHistory.visibility = if (isLoading) View.GONE else View.VISIBLE
     }
 
     private fun setToolbar() {

@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
-                android:text="Result Scan with SnapMoo"
+                android:text="@string/result_scan_with_snapmoo"
                 android:textColor="@color/silver_600" />
 
             <androidx.cardview.widget.CardView
@@ -73,7 +73,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:maxLines="2"
-                        android:text="FMD Indication"
+                        android:text="@string/fmd_indication"
                         android:textColor="@color/silver_200"
                         app:layout_constraintEnd_toStartOf="@id/tv_score"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -121,7 +121,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="Reporter Information "
+                    android:text="@string/reporter_information"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -132,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="12dp"
-                    android:text="Name"
+                    android:text="@string/name"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/title_content_user_information" />
 
@@ -163,7 +163,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="12dp"
-                    android:text="Phone Number"
+                    android:text="@string/phone_number"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/nameInputLayout" />
 
@@ -193,7 +193,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="12dp"
-                    android:text="Email"
+                    android:text="@string/email"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/phoneNumberInputLayout" />
 
@@ -227,7 +227,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Use My Profile Data"
+                    android:text="@string/use_my_profile_data"
                     android:textColor="@color/blue_700"
                     app:layout_constraintBottom_toBottomOf="@id/checkbox_useData"
                     app:layout_constraintEnd_toStartOf="@id/checkbox_useData"
@@ -247,7 +247,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:textColor="@color/silver_700"
-                    android:text="Location Details"
+                    android:text="@string/location_details"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -258,7 +258,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="12dp"
-                    android:text="Addres"
+                    android:text="@string/address"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/title_location" />
 
@@ -288,7 +288,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="12dp"
-                    android:text="City/District"
+                    android:text="@string/city_district"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/addressInputLayout" />
 
@@ -318,7 +318,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
 
-                    android:text="Province"
+                    android:text="@string/province"
                     app:layout_constraintStart_toEndOf="@id/cityInputLayout"
                     app:layout_constraintTop_toTopOf="@id/tv_city" />
 
@@ -352,7 +352,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Share My Current Location"
+                    android:text="@string/share_my_current_location"
                     android:textColor="@color/blue_700"
                     app:layout_constraintBottom_toBottomOf="@id/checkbox_shareLocation"
                     app:layout_constraintEnd_toStartOf="@id/checkbox_shareLocation"
@@ -372,7 +372,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="Livestock Infromation"
+                    android:text="@string/livestock_infromation"
                     android:textColor="@color/silver_700"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -384,7 +384,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="12dp"
-                    android:text="Many Have"
+                    android:text="@string/many_have"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/title_livestock" />
 
@@ -414,7 +414,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="12dp"
-                    android:text="Condition of The Cattle"
+                    android:text="@string/condition_of_the_cattle"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/haveInputLayout" />
 
@@ -426,7 +426,7 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="12dp"
                     android:maxLines="3"
-                    android:text="Enter a description of the condition of your cattle (optional)"
+                    android:text="@string/enter_a_description_of_the_condition_of_your_cattle_optional"
                     app:layout_constraintEnd_toEndOf="@+id/conditionInputLayout"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_condition" />
@@ -475,7 +475,7 @@
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginEnd="12dp"
-            android:text="Create Report"
+            android:text="@string/create_report"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

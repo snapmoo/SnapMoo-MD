@@ -48,7 +48,6 @@ class DetailReportActivity : AppCompatActivity(), View.OnClickListener {
         binding.toolbar.tvToolbarTitle.text = label
     }
 
-    @SuppressLint("SetTextI18n")
     private fun setData() {
         detailReportViewModel.getSession().observe(this) { user ->
             val token = user.token
@@ -71,7 +70,7 @@ class DetailReportActivity : AppCompatActivity(), View.OnClickListener {
                                         tvAddress.text = ": ${data.address}, ${data.city}, ${data.province}"
                                         tvTotal.text = ": ${data.manyHave}"
                                         tvCondition.text = ": ${data.affectedBodyPart}"
-                                        tvClasifyResult.text = "${data.prediction.toString()}"
+                                        tvClasifyResult.text = data.prediction.toString()
                                         tvScore.text = "${data.score.toString()}%"
                                         val readableDate = convertTimestampToReadableDate(
                                             data.createdAt?.seconds,
