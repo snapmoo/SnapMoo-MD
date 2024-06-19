@@ -60,20 +60,11 @@ dependencies {
     implementation(libs.camera.lifecycle)
     implementation(libs.camera.view)
     implementation (libs.glide)
-
-//    implementation ("com.mikhaellopez:circularimageview:4.3.0")
-    implementation ("de.hdodenhof:circleimageview:3.1.0")
-// perlu tambahan di setting graddle
-//    implementation ("com.github.Spikeysanju:MotionToast:1.4")
-
-
-    implementation ("com.google.android.flexbox:flexbox:3.0.0")
-
+    implementation (libs.circleimageview)
+    implementation (libs.flexbox)
     implementation(libs.play.services.maps)
     implementation(libs.play.services.location)
-
     implementation(libs.ucrop)
-
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)

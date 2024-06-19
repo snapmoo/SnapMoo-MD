@@ -75,7 +75,7 @@ class DetailReportActivity : AppCompatActivity(), View.OnClickListener {
                                             data.createdAt?.seconds,
                                             data.createdAt?.nanoseconds
                                         )
-                                        tvCreatedAt.text = readableDate
+                                        tvCreatedAt.text =": $readableDate"
                                         Glide.with(this@DetailReportActivity)
                                             .load(data.photo)
                                             .into(ivImageScan)
