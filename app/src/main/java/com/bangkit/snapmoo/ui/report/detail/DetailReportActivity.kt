@@ -1,6 +1,5 @@
 package com.bangkit.snapmoo.ui.report.detail
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
@@ -12,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bangkit.snapmoo.R
 import com.bangkit.snapmoo.data.Result
 import com.bangkit.snapmoo.data.api.response.DetailReportResult
-import com.bangkit.snapmoo.data.api.response.ReportResult
 import com.bangkit.snapmoo.databinding.ActivityDetailReportBinding
 import com.bangkit.snapmoo.ui.MainViewModelFactory
 import com.bumptech.glide.Glide
@@ -67,7 +65,8 @@ class DetailReportActivity : AppCompatActivity(), View.OnClickListener {
                                         tvName.text = ": ${data.name}"
                                         tvEmail.text = ": ${data.email}"
                                         tvPhoneNumber.text = ": ${data.phoneNumber}"
-                                        tvAddress.text = ": ${data.address}, ${data.city}, ${data.province}"
+                                        tvAddress.text =
+                                            ": ${data.address}, ${data.city}, ${data.province}"
                                         tvTotal.text = ": ${data.manyHave}"
                                         tvCondition.text = ": ${data.affectedBodyPart}"
                                         tvClasifyResult.text = data.prediction.toString()
@@ -95,33 +94,43 @@ class DetailReportActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun sendEmail(data: DetailReportResult) {
-        val subject = "Data Report"
+
+
+        val subject = "Permohonan Bantuan Penanganan Kasus PMK Berdasarkan Laporan Terlampir"
+        val url = if (data.latitude != null && data.longitude != null) {
+            "https://maps.google.com/?q=${data.latitude},${data.longitude}"
+        } else {
+            "-"
+        }
 
         val message = """
-        Data:
-        
-        ID: ${data.id ?: "-"}
-        Many Have: ${data.manyHave ?: "-"}
-        Score: ${data.score ?: "-"}
-        Address: ${data.address ?: "-"}
-        Province: ${data.province ?: "-"}
-        City: ${data.city ?: "-"}
-        Affected Body Part: ${data.affectedBodyPart ?: "-"}
-        Latitude: ${data.latitude ?: "-"}
-        Name: ${data.name ?: "-"}
-        Photo: ${data.photo ?: "-"}
-        Phone Number: ${data.phoneNumber ?: "-"}
-        Email: ${data.email ?: "-"}
-        Longitude: ${data.longitude ?: "-"}
-        Prediction: ${data.prediction ?: "-"}
-        Created At: ${data.createdAt?.toString() ?: "-"}
-        
-        Terima kasih.
-        """
+Dengan hormat,
+
+Kami ingin menyampaikan laporan mengenai adanya kasus PMK yang memerlukan perhatian dan bantuan dari instansi terkait. Adapun data yang telah kami himpun adalah sebagai berikut:
+
+Nama: ${data.name ?: "-"}
+Nomor Telepon: ${data.phoneNumber ?: "-"}
+Email: ${data.email ?: "-"}
+Alamat: ${data.address ?: "-"}
+Kota: ${data.city ?: "-"}
+Provinsi: ${data.province ?: "-"}
+Total hewan ternak: ${data.manyHave ?: "-"}
+Deskripsi tambahan: ${data.affectedBodyPart ?: "-"}
+Titik lokasi: ${url}
+Foto: ${data.photo ?: "-"}
+Indikasi: ${data.prediction ?: "-"}
+Skor Indikasi: ${data.score ?: "-"}%
+
+Berdasarkan data di atas, kami memohon bantuan dan intervensi dari instansi terkait untuk menangani dan menanggulangi penyebaran penyakit ini. Kami siap berkoordinasi lebih lanjut guna memastikan penanganan yang tepat.
+
+Apabila diperlukan, kami siap memberikan informasi tambahan dan detail lebih lanjut. Kami berharap agar permohonan ini dapat ditindaklanjuti secepatnya.
+
+Atas perhatian dan kerjasamanya, kami ucapkan terima kasih.
+"""
 
         val intent = Intent(Intent.ACTION_SENDTO)
         intent.data = Uri.parse("mailto:") // hanya aplikasi email yang dapat menangani intent ini
-        intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("bpkadbali@gmail.com"))
+        intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("snapmoo@gmail.com"))
         intent.putExtra(Intent.EXTRA_SUBJECT, subject)
         intent.putExtra(Intent.EXTRA_TEXT, message)
 
