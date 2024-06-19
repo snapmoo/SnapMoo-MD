@@ -10,9 +10,9 @@ import android.net.Uri
 import android.os.Build
 import android.os.Environment
 import android.provider.MediaStore
-import android.util.Log
 import androidx.core.content.FileProvider
 import androidx.exifinterface.media.ExifInterface
+import com.bangkit.snapmoo.BuildConfig
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -20,12 +20,6 @@ import java.io.InputStream
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
-import com.bangkit.snapmoo.BuildConfig
-import org.tensorflow.lite.DataType
-import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
-import java.nio.ByteBuffer
-import java.nio.ByteOrder
-import java.util.UUID
 
 private const val MAXIMAL_SIZE = 1000000 //1 MB
 private const val FILENAME_FORMAT = "yyyyMMdd_HHmmss"
@@ -61,7 +55,7 @@ private fun getImageUriForPreQ(context: Context): Uri {
     //content://com.dicoding.picodiploma.mycamera.fileprovider/my_images/MyCamera/20230825_133659.jpg
 }
 
- fun createCustomTempFile(context: Context): File {
+fun createCustomTempFile(context: Context): File {
     val filesDir = context.cacheDir
 //    Log.d("Lokasi custom temp file", filesDir.toString())
     return File.createTempFile(timeStamp, ".jpg", filesDir)
@@ -82,7 +76,8 @@ fun uriToFile(imageUri: Uri, context: Context): File {
 fun uriToBitmap(context: Context, uri: Uri): Bitmap? {
     return try {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            val source: ImageDecoder.Source = ImageDecoder.createSource(context.contentResolver, uri)
+            val source: ImageDecoder.Source =
+                ImageDecoder.createSource(context.contentResolver, uri)
             ImageDecoder.decodeBitmap(source) { decoder, _, _ ->
                 decoder.allocator = ImageDecoder.ALLOCATOR_SOFTWARE
                 decoder.isMutableRequired = true
@@ -127,7 +122,7 @@ fun Bitmap.getRotatedBitmap(file: File): Bitmap? {
     }
 }
 
-fun rotateImage(source: Bitmap, angle: Float): Bitmap? {
+fun rotateImage(source: Bitmap, angle: Float): Bitmap {
     val matrix = Matrix()
     matrix.postRotate(angle)
     return Bitmap.createBitmap(
