@@ -67,6 +67,8 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener {
                 settingViewModel.logout()
                 showToast(getString(R.string.logout_success))
                 val intent = Intent(this@SettingActivity, WelcomeActivity::class.java)
+                intent.flags =
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
                 finish()
             }
