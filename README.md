@@ -85,7 +85,7 @@ Lottie: Adding animations that make the interface interesting, such as loadiang 
 <br>
 <h4>GetAPP</h4>
 
-[![Download SnapMoo](https://img.shields.io/badge/Download%20SnapMoo-blue?style=for-the-badge)](https://media.suara.com/pictures/653x366/2024/04/29/87806-hantu-terseram-di-film-horor-imdb.jpg)
+[![Download SnapMoo](https://img.shields.io/badge/Download%20SnapMoo-blue?style=for-the-badge)](https://github.com/snapmoo/SnapMoo-MD/releases/download/v1.0.0/app-debug.apk)
 
 
 
