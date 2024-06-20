@@ -166,7 +166,7 @@ class SendReportActivity : AppCompatActivity(), View.OnClickListener {
                 return
             }
 
-            var manyHave = 0
+            var manyHave: Int = 0
 
             if (checkManyHave.isEmpty()) {
                 val number = checkManyHave.toIntOrNull()
@@ -174,8 +174,14 @@ class SendReportActivity : AppCompatActivity(), View.OnClickListener {
                     binding.haveEditText.error =
                         getString(R.string.please_fill_in_the_number_of_cattle_you_have)
                     return
-                } else {
-                    manyHave = number
+                }
+            } else {
+                if (checkManyHave.toInt() <= 0) {
+                    binding.haveEditText.error = getString(R.string.please_enter_a_valid_number)
+                    return
+                }
+                else {
+                    manyHave = checkManyHave.toInt()
                 }
             }
 
