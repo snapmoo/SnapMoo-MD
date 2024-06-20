@@ -165,5 +165,6 @@
     <string name="check_report">Check your report</string>
     <string name="no_data_found">No data found!</string>
     <string name="current_image_uri_is_null">Current Image URI is null</string>
+    <string name="please_enter_a_valid_number">Please enter a valid number</string>
 
 </resources>
